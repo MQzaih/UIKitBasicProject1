@@ -16,31 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fA6-2O-ARk">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fA6-2O-ARk">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="200" id="1UH-AE-XlA"/>
-                            <constraint firstAttribute="height" constant="200" id="VfB-oD-uca"/>
-                        </constraints>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="fA6-2O-ARk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9Vy-GS-LU2"/>
-                <constraint firstItem="fA6-2O-ARk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BmA-zs-44T"/>
-                <constraint firstItem="fA6-2O-ARk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OLI-rW-iVp"/>
-                <constraint firstAttribute="trailing" secondItem="fA6-2O-ARk" secondAttribute="trailing" id="V5A-x9-fNM"/>
-                <constraint firstItem="fA6-2O-ARk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ag3-Pq-oaS"/>
-                <constraint firstAttribute="bottom" secondItem="fA6-2O-ARk" secondAttribute="bottom" id="hMM-8Y-yrJ"/>
-                <constraint firstAttribute="bottom" secondItem="fA6-2O-ARk" secondAttribute="bottom" id="hmf-at-ogI"/>
-                <constraint firstAttribute="trailing" secondItem="fA6-2O-ARk" secondAttribute="trailing" id="z0F-HZ-MhT"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="195" height="205"/>
             <connections>
                 <outlet property="userImage" destination="fA6-2O-ARk" id="Nh5-Og-6gp"/>
             </connections>
-            <point key="canvasLocation" x="-28.260869565217394" y="47.209821428571423"/>
+            <point key="canvasLocation" x="-28.985507246376812" y="46.875"/>
         </collectionViewCell>
     </objects>
 </document>

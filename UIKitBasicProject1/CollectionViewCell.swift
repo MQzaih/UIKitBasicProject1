@@ -13,9 +13,10 @@ class CollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-    
     }
     public func configure(with image: UIImage){
         userImage.image = image
+            userImage.frame = CGRect(x:0,y:0,width:contentView.frame.size.width, height:contentView.frame.size.height)
     }
+    
 }
