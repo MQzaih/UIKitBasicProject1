@@ -146,56 +146,56 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masa Qzaih" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-6X-fqz">
-                                <rect key="frame" x="235" y="188" width="89.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="235" y="188" width="159" height="35.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-Pq-fyN">
-                                <rect key="frame" x="235" y="218.5" width="91.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="235" y="233.5" width="87.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0699995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdW-0K-d7t">
-                                <rect key="frame" x="102" y="358" width="73" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="107" y="358" width="68" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="mail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdl-Af-rh2">
-                                <rect key="frame" x="102" y="398.5" width="69" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="mail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdl-Af-rh2">
+                                <rect key="frame" x="107.5" y="402.5" width="63.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U06-s7-7zq">
-                                <rect key="frame" x="129" y="554" width="200" height="0.0"/>
+                                <rect key="frame" x="129" y="566" width="200" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-o6-pOz">
-                                <rect key="frame" x="20" y="398" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="402.5" width="47.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN5-qf-Wd5">
-                                <rect key="frame" x="20" y="439" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="447" width="374" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.ddj.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sog-Sg-Qvx">
-                                <rect key="frame" x="98" y="439" width="103" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="98" y="447" width="103" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV5-Pf-yQX">
-                                <rect key="frame" x="20" y="352" width="74" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="352" width="79" height="30.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -229,7 +229,7 @@
                             <constraint firstItem="o9t-Pq-fyN" firstAttribute="top" secondItem="eRh-6X-fqz" secondAttribute="bottom" constant="10" id="mys-7p-joa"/>
                             <constraint firstItem="U06-s7-7zq" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="129" id="nu2-HG-YxG"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" secondItem="U06-s7-7zq" secondAttribute="trailing" constant="85" id="oxY-a7-gCv"/>
-                            <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eRh-6X-fqz" secondAttribute="trailing" constant="20" id="pf7-zc-jIP"/>
+                            <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eRh-6X-fqz" secondAttribute="trailing" constant="20" id="pf7-zc-jIP"/>
                             <constraint firstItem="eRh-6X-fqz" firstAttribute="leading" secondItem="doQ-2I-kC5" secondAttribute="trailing" constant="20" id="tv5-SE-wmD"/>
                             <constraint firstItem="TN5-qf-Wd5" firstAttribute="top" secondItem="Rdl-Af-rh2" secondAttribute="bottom" constant="20" id="wqd-Fk-uEb"/>
                             <constraint firstItem="TN5-qf-Wd5" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="20" id="wvj-Sp-oCh"/>
