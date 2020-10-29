@@ -19,10 +19,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         userListTable.delegate = self
         userListTable.dataSource = self
         
-        users.append(user(fullName: "Gucci ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "1"))
-        users.append(user(fullName: "Gucci2 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "2"))
-        users.append(user(fullName: "Gucci3 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "3"))
-        users.append(user(fullName: "Gucci4 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "4"))
+        users.append(user(fullName: "Gucci ",username: "@Gucci",phone: 05999,emailAddress: "gucci@asaltech.com",website: "www.gucci.com", img: "1"))
+        users.append(user(fullName: "Gucci2 ",username: "@Gucci2",phone: 05999,emailAddress: "gucci2@asaltech.com",website: "www.gucci2.com", img: "2"))
+        users.append(user(fullName: "Gucci3 ",username: "@Gucci3",phone: 05999,emailAddress: "gucci3@asaltech.com",website: "www.gucci3.com", img: "3"))
+        users.append(user(fullName: "Gucci4 ",username: "@Gucci4",phone: 05999,emailAddress: "gucci4@asaltech.com",website: "www.gucci4.com", img: "4"))
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count

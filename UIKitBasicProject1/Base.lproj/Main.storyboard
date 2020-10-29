@@ -204,9 +204,10 @@
                         <constraints>
                             <constraint firstItem="vV5-Pf-yQX" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="20" id="03r-Oz-3R0"/>
                             <constraint firstItem="o9t-Pq-fyN" firstAttribute="top" secondItem="eRh-6X-fqz" secondAttribute="bottom" constant="10" id="1wB-p1-e5r"/>
-                            <constraint firstItem="SdW-0K-d7t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vV5-Pf-yQX" secondAttribute="trailing" symbolic="YES" id="6TA-ZF-h98"/>
+                            <constraint firstItem="SdW-0K-d7t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vV5-Pf-yQX" secondAttribute="trailing" constant="8" symbolic="YES" id="6TA-ZF-h98"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Rdl-Af-rh2" secondAttribute="trailing" constant="243" id="8pf-xH-Hfy"/>
                             <constraint firstItem="eRh-6X-fqz" firstAttribute="leading" secondItem="doQ-2I-kC5" secondAttribute="trailing" constant="20" id="AtY-Pn-CIO"/>
+                            <constraint firstItem="SdW-0K-d7t" firstAttribute="leading" secondItem="vV5-Pf-yQX" secondAttribute="trailing" constant="33" id="B6p-fw-h4L"/>
                             <constraint firstItem="vV5-Pf-yQX" firstAttribute="top" secondItem="doQ-2I-kC5" secondAttribute="bottom" constant="44" id="DGC-qV-xaW"/>
                             <constraint firstItem="U06-s7-7zq" firstAttribute="top" secondItem="Sog-Sg-Qvx" secondAttribute="bottom" constant="94.5" id="ISc-2p-252"/>
                             <constraint firstItem="doQ-2I-kC5" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="15" id="KVp-gt-N7K"/>
