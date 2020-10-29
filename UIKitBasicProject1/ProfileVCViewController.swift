@@ -14,6 +14,7 @@ var name = ""
     var username = " "
     var phone = ""
     var website = " "
+    var img = " "
     @IBOutlet var userimg : UIImageView!
     @IBOutlet var emailLabel : UILabel!
     @IBOutlet var nameLabel : UILabel!
@@ -23,13 +24,12 @@ var name = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("name is")
         emailLabel.text = email
         nameLabel.text = name
         phoneLabel.text = phone
         usernameLabel.text = username
         websiteLabel.text = website
-
+        userimg.image = UIImage(named: img)
         // Do any additional setup after loading the view.
     }
     

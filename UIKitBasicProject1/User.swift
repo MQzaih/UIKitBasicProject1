@@ -14,13 +14,14 @@ struct user {
     var phone:Int
     var emailAddress :String
     var website :String
-
-    init(fullName: String, username: String, phone:Int,emailAddress:String, website:String){
+    var img : String
+    init(fullName: String, username: String, phone:Int,emailAddress:String, website:String, img:String){
         self.fullName = fullName
         self.username = username
         self.phone = phone
         self.emailAddress = emailAddress
         self.website = website
+        self.img = img
     }
     
 }

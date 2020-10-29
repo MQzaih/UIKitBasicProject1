@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    var myData = ["","second","third"]
     var users = [user] ()
     var index = 0
     @IBOutlet var userListTable: UITableView!
@@ -20,10 +19,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         userListTable.delegate = self
         userListTable.dataSource = self
         
-        users.append(user(fullName: "Gucci ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com"))
-        users.append(user(fullName: "Gucci2 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com"))
-        users.append(user(fullName: "Gucci3 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com"))
-        users.append(user(fullName: "Gucci4 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com"))
+        users.append(user(fullName: "Gucci ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "1"))
+        users.append(user(fullName: "Gucci2 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "2"))
+        users.append(user(fullName: "Gucci3 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "3"))
+        users.append(user(fullName: "Gucci4 ",username: "@diamond",phone: 05999,emailAddress: "mqzaih@asaltech.com",website: "www.me.com", img: "4"))
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -32,6 +31,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userListTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        cell.userImage.image = UIImage(named: users[indexPath.row].img)
         cell.username.text = users[indexPath.row].fullName
         cell.email.text = users[indexPath.row].emailAddress
 return cell
@@ -65,6 +65,7 @@ return cell
    
     if segue.identifier == "profile" {
         if let vc = segue.destination as? ProfileVCViewController {
+            vc.img = users[index].img
             vc.name = users[index].fullName
             vc.email = users[index].emailAddress
             vc.website = users[index].website
