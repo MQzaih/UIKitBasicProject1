@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-   var users = [user] ()
+    var users = [user] ()
     var khara = ""
     var index = 0
     @IBOutlet var userListTable: UITableView!
@@ -20,17 +20,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         userListTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         userListTable.delegate = self
         userListTable.dataSource = self
-     let service = UserServer(baseUrl: "https://jsonplaceholder.typicode.com/users")
-  /*     service.getUsers()
-        service.completionHandler {[weak self](users,status,message) in
-            if status {
-                guard let self = self else {return }
-                guard let _users = users else { return }
-                self.users = _users
-                self.userListTable.reloadData()
-            } */
-            
-            
+        let service = UserServer(baseUrl: "https://jsonplaceholder.typicode.com/users")
+        
         service.fetchUserJSON { (users, err) in
             
             if err != nil {
@@ -43,16 +34,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             })
             self.users = users!
             DispatchQueue.main.async {
-              self.userListTable.reloadData()
+                self.userListTable.reloadData()
             }
-
+            
         }
-
-        }
-
         
-        
- 
+    }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -72,9 +63,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userListTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         /* cell.userImage.image = UIImage(named: users[indexPath.row].img)*/
-         cell.username.text = users[indexPath.row].name
-         cell.email.text = users[indexPath.row].email
-    return cell
+        cell.username.text = users[indexPath.row].name
+        cell.email.text = users[indexPath.row].email
+        return cell
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -105,11 +96,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if segue.identifier == "profile" {
             if let vc = segue.destination as? ProfileVCViewController {
                 /*      vc.img = users[index].img*/
-                 vc.name = users[index].name
-                 vc.email = users[index].email
-                 vc.website = users[index].website
-                 vc.phone = String(users[index].phone)
-                 vc.username = users[index].username
+                vc.name = users[index].name
+                vc.email = users[index].email
+                vc.website = users[index].website
+                vc.phone = String(users[index].phone)
+                vc.username = users[index].username
             }
             
         }

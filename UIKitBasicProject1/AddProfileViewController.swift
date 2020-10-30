@@ -48,9 +48,7 @@ class AddProfileViewController: UIViewController {
             name = nameText.text!
             print(email)
             restart()
-           // self.presentingViewController?.dismiss(animated: true, completion: nil)
-
-         //   performSegue(withIdentifier: "first", sender: self)
+           
         }
         
         
@@ -71,7 +69,6 @@ class AddProfileViewController: UIViewController {
         
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         let x = emailPred.evaluate(with: email)
-        // print("hi")
         print(x)
         return emailPred.evaluate(with: email)
     }
