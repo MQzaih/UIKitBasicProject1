@@ -21,7 +21,9 @@ var name = ""
     @IBOutlet var phoneLabel : UILabel!
     @IBOutlet var usernameLabel : UILabel!
     @IBOutlet var websiteLabel: UILabel!
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailLabel.text = email
@@ -33,6 +35,7 @@ var name = ""
         // Do any additional setup after loading the view.
     }
     
+
 
     /*
     // MARK: - Navigation

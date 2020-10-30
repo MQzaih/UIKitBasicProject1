@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		067E5DD02548779800908DEC /* ProfileVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E5DCF2548779800908DEC /* ProfileVCViewController.swift */; };
+		0682769A254AD397002BB9F4 /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06827699254AD397002BB9F4 /* AddProfileViewController.swift */; };
 		06ACA9732546FF5600339FCF /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACA9722546FF5600339FCF /* GalleryViewController.swift */; };
 		06ACA9762547444800339FCF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACA9742547444800339FCF /* CollectionViewCell.swift */; };
 		06ACA9772547444800339FCF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06ACA9752547444800339FCF /* CollectionViewCell.xib */; };
@@ -20,10 +21,13 @@
 		06D8BC652546D31A006C0BFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D8BC632546D31A006C0BFF /* LaunchScreen.storyboard */; };
 		06D8BC6E2546F941006C0BFF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D8BC6C2546F941006C0BFF /* TableViewCell.swift */; };
 		06D8BC6F2546F941006C0BFF /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D8BC6D2546F941006C0BFF /* TableViewCell.xib */; };
+		06FB8BB5254C400600F0FEC1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FB8BB4254C400600F0FEC1 /* Service.swift */; };
+		90F9B642791E68BFCE92E4EA /* Pods_UIKitBasicProject1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E34CB31F5A61B8E08EA240 /* Pods_UIKitBasicProject1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		067E5DCF2548779800908DEC /* ProfileVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCViewController.swift; sourceTree = "<group>"; };
+		06827699254AD397002BB9F4 /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
 		06ACA9722546FF5600339FCF /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		06ACA9742547444800339FCF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		06ACA9752547444800339FCF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		06D8BC662546D31A006C0BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06D8BC6C2546F941006C0BFF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		06D8BC6D2546F941006C0BFF /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		06FB8BB4254C400600F0FEC1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2D25D6079A1339B4DFAE5404 /* Pods-UIKitBasicProject1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitBasicProject1.release.xcconfig"; path = "Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1.release.xcconfig"; sourceTree = "<group>"; };
+		44E34CB31F5A61B8E08EA240 /* Pods_UIKitBasicProject1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitBasicProject1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F5C00BD6A45034031FD1627 /* Pods-UIKitBasicProject1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitBasicProject1.debug.xcconfig"; path = "Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90F9B642791E68BFCE92E4EA /* Pods_UIKitBasicProject1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +76,8 @@
 			children = (
 				06D8BC572546D318006C0BFF /* UIKitBasicProject1 */,
 				06D8BC562546D318006C0BFF /* Products */,
+				2FC0F7B10DECEDBF43D6177D /* Pods */,
+				5A35506FAE1A3BDC6C5E355A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,15 +96,34 @@
 				06C171082548027400005F68 /* User.swift */,
 				06ACA9722546FF5600339FCF /* GalleryViewController.swift */,
 				067E5DCF2548779800908DEC /* ProfileVCViewController.swift */,
+				06827699254AD397002BB9F4 /* AddProfileViewController.swift */,
 				06ACA9742547444800339FCF /* CollectionViewCell.swift */,
 				06ACA9752547444800339FCF /* CollectionViewCell.xib */,
 				06D8BC5C2546D318006C0BFF /* ViewController.swift */,
+				06FB8BB4254C400600F0FEC1 /* Service.swift */,
 				06D8BC6C2546F941006C0BFF /* TableViewCell.swift */,
 				06D8BC6D2546F941006C0BFF /* TableViewCell.xib */,
 				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
 				06D8BC662546D31A006C0BFF /* Info.plist */,
 			);
 			path = UIKitBasicProject1;
+			sourceTree = "<group>";
+		};
+		2FC0F7B10DECEDBF43D6177D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F5C00BD6A45034031FD1627 /* Pods-UIKitBasicProject1.debug.xcconfig */,
+				2D25D6079A1339B4DFAE5404 /* Pods-UIKitBasicProject1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A35506FAE1A3BDC6C5E355A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44E34CB31F5A61B8E08EA240 /* Pods_UIKitBasicProject1.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06D8BC692546D31A006C0BFF /* Build configuration list for PBXNativeTarget "UIKitBasicProject1" */;
 			buildPhases = (
+				48020D440740E189A53EBA93 /* [CP] Check Pods Manifest.lock */,
 				06D8BC512546D318006C0BFF /* Sources */,
 				06D8BC522546D318006C0BFF /* Frameworks */,
 				06D8BC532546D318006C0BFF /* Resources */,
+				E937F913327DAC9F1162AD3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +196,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48020D440740E189A53EBA93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIKitBasicProject1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E937F913327DAC9F1162AD3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06D8BC512546D318006C0BFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -173,8 +247,10 @@
 				067E5DD02548779800908DEC /* ProfileVCViewController.swift in Sources */,
 				06D8BC6E2546F941006C0BFF /* TableViewCell.swift in Sources */,
 				06ACA9762547444800339FCF /* CollectionViewCell.swift in Sources */,
+				0682769A254AD397002BB9F4 /* AddProfileViewController.swift in Sources */,
 				06ACA9732546FF5600339FCF /* GalleryViewController.swift in Sources */,
 				06D8BC592546D318006C0BFF /* AppDelegate.swift in Sources */,
+				06FB8BB5254C400600F0FEC1 /* Service.swift in Sources */,
 				06D8BC5B2546D318006C0BFF /* SceneDelegate.swift in Sources */,
 				06C171092548027400005F68 /* User.swift in Sources */,
 			);
@@ -318,6 +394,7 @@
 		};
 		06D8BC6A2546D31A006C0BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F5C00BD6A45034031FD1627 /* Pods-UIKitBasicProject1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -335,6 +412,7 @@
 		};
 		06D8BC6B2546D31A006C0BFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D25D6079A1339B4DFAE5404 /* Pods-UIKitBasicProject1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

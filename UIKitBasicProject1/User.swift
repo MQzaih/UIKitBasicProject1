@@ -8,20 +8,27 @@
 
 import Foundation
 
-struct user {
-    var fullName :String
-    var username :String
-    var phone:Int
-    var emailAddress :String
-    var website :String
-    var img : String
-    init(fullName: String, username: String, phone:Int,emailAddress:String, website:String, img:String){
-        self.fullName = fullName
+struct user: Decodable {
+    var name :String = " "
+    var username :String = " "
+    var phone:String = ""
+    var email :String = ""
+    var website :String = ""
+   // var img : String = ""
+    init(fullName: String, username: String, phone:String,emailAddress:String, website:String){
+        self.name = fullName
         self.username = username
         self.phone = phone
-        self.emailAddress = emailAddress
+        self.email = emailAddress
         self.website = website
-        self.img = img
+       // self.img = img
     }
     
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case username = "username"
+        case website = "website"
+        case email = "email"
+        case phone = "phone"
+    }
 }

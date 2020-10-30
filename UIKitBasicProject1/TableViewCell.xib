@@ -23,13 +23,16 @@
                             <constraint firstAttribute="height" constant="100" id="q0a-34-JPM"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Masa Qzaih" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz0-Ed-fFV">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masa Qzaih" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz0-Ed-fFV">
                         <rect key="frame" x="120" y="30" width="91" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="itp-Mf-tgM"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                         <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="masaqzaih@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iud-Hz-HqW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="masaqzaih@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iud-Hz-HqW">
                         <rect key="frame" x="120" y="70" width="180" height="20.5"/>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                         <nil key="textColor"/>
@@ -37,7 +40,6 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Iud-Hz-HqW" firstAttribute="top" secondItem="fz0-Ed-fFV" secondAttribute="bottom" constant="20" id="3GL-2Q-nJ5"/>
                     <constraint firstItem="V7D-Bv-I6o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="IgQ-yN-Eb4"/>
                     <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Iud-Hz-HqW" secondAttribute="trailing" constant="58" id="LAm-6g-0Of"/>
                     <constraint firstItem="Iud-Hz-HqW" firstAttribute="top" secondItem="fz0-Ed-fFV" secondAttribute="bottom" constant="20" id="RJX-hL-fes"/>
