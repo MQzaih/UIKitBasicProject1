@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Service {
+class UserServer {
     fileprivate var baseUrl = ""
     typealias usersCallBack = (_ users:[user]?, _ status: Bool, _ message: String )->Void
     var callBack: usersCallBack?

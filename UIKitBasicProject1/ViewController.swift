@@ -20,15 +20,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         userListTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         userListTable.delegate = self
         userListTable.dataSource = self
-      let service = Service(baseUrl: "https://jsonplaceholder.typicode.com/users")
-   /*     service.getUsers()
+     let service = UserServer(baseUrl: "https://jsonplaceholder.typicode.com/users")
+  /*     service.getUsers()
         service.completionHandler {[weak self](users,status,message) in
             if status {
                 guard let self = self else {return }
                 guard let _users = users else { return }
                 self.users = _users
                 self.userListTable.reloadData()
-            }*/
+            } */
             
             
         service.fetchUserJSON { (users, err) in

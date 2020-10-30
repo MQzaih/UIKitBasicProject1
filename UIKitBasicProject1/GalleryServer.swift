@@ -10,25 +10,23 @@
 import Foundation
 import Alamofire
 
-class GalleryService {
+class GalleryServer {
+    
     fileprivate var baseUrl = ""
-    typealias usersCallBack = (_ users:[user]?, _ status: Bool, _ message: String )->Void
-    var callBack: usersCallBack?
+    typealias photoCallBack = (_ photos:[Photo]?, _ status: Bool, _ message: String )->Void
+    var callBack: photoCallBack?
     init(baseUrl: String){
         self.baseUrl = baseUrl
     }
     
-    func getUsers(){
+    func getPics(){
         AF.request(baseUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response{
             (responseData) in
-            guard let data = responseData.data else {
-                return
-            }
+            guard let data = responseData.data else {return}
             do {
-                let users = try JSONDecoder().decode([user].self, from: data)
-                self.callBack?(users,true,"")
-                
-                print(users)
+                let photos = try JSONDecoder().decode([Photo].self, from: data)
+                self.callBack?(photos,true,"")
+           //     print(photos)
             }
             catch {
                 print("ERROR decoding\(error)")
@@ -39,7 +37,8 @@ class GalleryService {
         }
         
     }
-    func completionHandler(callBack:@escaping usersCallBack){
+    
+    func completionHandler(callBack:@escaping photoCallBack){
         self.callBack = callBack
     }
     

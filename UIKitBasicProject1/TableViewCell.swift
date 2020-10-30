@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import Alamofire
 class TableViewCell: UITableViewCell {
     @IBOutlet var username : UILabel!
     @IBOutlet var email : UILabel!
     @IBOutlet weak var userImage: UIImageView!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

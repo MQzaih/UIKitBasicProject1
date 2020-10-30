@@ -14,22 +14,13 @@ struct user: Codable {
     var phone:String = ""
     var email :String = ""
     var website :String = ""
-   // var img : String = ""
     init(fullName: String, username: String, phone:String,emailAddress:String, website:String){
         self.name = fullName
         self.username = username
         self.phone = phone
         self.email = emailAddress
         self.website = website
-      //  self.img = "1"
     }
     
-  
-  /*  enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case username = "username"
-        case website = "website"
-        case email = "email"
-        case phone = "phone"
-    }*/
+ 
 }
