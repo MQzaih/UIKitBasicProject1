@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct user: Decodable {
+struct user: Codable {
     var name :String = " "
     var username :String = " "
     var phone:String = ""
@@ -21,14 +21,15 @@ struct user: Decodable {
         self.phone = phone
         self.email = emailAddress
         self.website = website
-       // self.img = img
+      //  self.img = "1"
     }
     
-    enum CodingKeys: String, CodingKey {
+  
+  /*  enum CodingKeys: String, CodingKey {
         case name = "name"
         case username = "username"
         case website = "website"
         case email = "email"
         case phone = "phone"
-    }
+    }*/
 }

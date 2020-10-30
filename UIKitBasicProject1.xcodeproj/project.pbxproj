@@ -22,6 +22,7 @@
 		06D8BC6E2546F941006C0BFF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D8BC6C2546F941006C0BFF /* TableViewCell.swift */; };
 		06D8BC6F2546F941006C0BFF /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D8BC6D2546F941006C0BFF /* TableViewCell.xib */; };
 		06FB8BB5254C400600F0FEC1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FB8BB4254C400600F0FEC1 /* Service.swift */; };
+		06FB8BB7254C702800F0FEC1 /* GalleryServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */; };
 		90F9B642791E68BFCE92E4EA /* Pods_UIKitBasicProject1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E34CB31F5A61B8E08EA240 /* Pods_UIKitBasicProject1.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		06D8BC6C2546F941006C0BFF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		06D8BC6D2546F941006C0BFF /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		06FB8BB4254C400600F0FEC1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryServer.swift; sourceTree = "<group>"; };
 		2D25D6079A1339B4DFAE5404 /* Pods-UIKitBasicProject1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitBasicProject1.release.xcconfig"; path = "Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1.release.xcconfig"; sourceTree = "<group>"; };
 		44E34CB31F5A61B8E08EA240 /* Pods_UIKitBasicProject1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitBasicProject1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5C00BD6A45034031FD1627 /* Pods-UIKitBasicProject1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitBasicProject1.debug.xcconfig"; path = "Target Support Files/Pods-UIKitBasicProject1/Pods-UIKitBasicProject1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				06ACA9752547444800339FCF /* CollectionViewCell.xib */,
 				06D8BC5C2546D318006C0BFF /* ViewController.swift */,
 				06FB8BB4254C400600F0FEC1 /* Service.swift */,
+				06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */,
 				06D8BC6C2546F941006C0BFF /* TableViewCell.swift */,
 				06D8BC6D2546F941006C0BFF /* TableViewCell.xib */,
 				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
@@ -245,6 +248,7 @@
 			files = (
 				06D8BC5D2546D318006C0BFF /* ViewController.swift in Sources */,
 				067E5DD02548779800908DEC /* ProfileVCViewController.swift in Sources */,
+				06FB8BB7254C702800F0FEC1 /* GalleryServer.swift in Sources */,
 				06D8BC6E2546F941006C0BFF /* TableViewCell.swift in Sources */,
 				06ACA9762547444800339FCF /* CollectionViewCell.swift in Sources */,
 				0682769A254AD397002BB9F4 /* AddProfileViewController.swift in Sources */,

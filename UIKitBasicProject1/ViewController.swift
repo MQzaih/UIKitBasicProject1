@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
    var users = [user] ()
+    var khara = ""
     var index = 0
     @IBOutlet var userListTable: UITableView!
     override func viewDidLoad() {
@@ -19,22 +20,40 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         userListTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         userListTable.delegate = self
         userListTable.dataSource = self
-       let service = Service(baseUrl: "https://jsonplaceholder.typicode.com/users")
-        service.getUsers()
+      let service = Service(baseUrl: "https://jsonplaceholder.typicode.com/users")
+   /*     service.getUsers()
         service.completionHandler {[weak self](users,status,message) in
             if status {
                 guard let self = self else {return }
                 guard let _users = users else { return }
                 self.users = _users
                 self.userListTable.reloadData()
+            }*/
+            
+            
+        service.fetchUserJSON { (users, err) in
+            
+            if err != nil {
+                print("failed")
+                return
             }
+            self.users = users!
+            users?.forEach({(user1) in
+                print(user1.name)
+            })
+            self.users = users!
+            DispatchQueue.main.async {
+              self.userListTable.reloadData()
+            }
+
         }
-      
+
+        }
+
         
         
-        
+ 
     
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
         

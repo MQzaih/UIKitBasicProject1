@@ -299,59 +299,61 @@
                                 <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="QtX-HN-dYm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="175" id="ZkH-sr-uRm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="haL-35-KeX"/>
                                     <constraint firstAttribute="width" constant="200" id="thO-wB-5A9"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masa Qzaih" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-6X-fqz">
-                                <rect key="frame" x="235" y="100" width="159" height="35.5"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Masa Qzaih" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-6X-fqz">
+                                <rect key="frame" x="235" y="92" width="143" height="36"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-Pq-fyN">
-                                <rect key="frame" x="235" y="145.5" width="87.5" height="24.5"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0699995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdW-0K-d7t">
-                                <rect key="frame" x="107" y="270" width="68" height="24.5"/>
+                                <rect key="frame" x="105" y="264" width="68" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="mail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdl-Af-rh2">
-                                <rect key="frame" x="107.5" y="314.5" width="63.5" height="24.5"/>
+                                <rect key="frame" x="107.5" y="308.5" width="63.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U06-s7-7zq">
-                                <rect key="frame" x="129" y="478" width="200" height="0.0"/>
+                                <rect key="frame" x="129" y="472" width="200" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-o6-pOz">
-                                <rect key="frame" x="20" y="314.5" width="47.5" height="24.5"/>
+                                <rect key="frame" x="20" y="308.5" width="47.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN5-qf-Wd5">
-                                <rect key="frame" x="20" y="359" width="374" height="24.5"/>
+                                <rect key="frame" x="20" y="353" width="374" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.ddj.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sog-Sg-Qvx">
-                                <rect key="frame" x="98" y="359" width="103" height="24.5"/>
+                                <rect key="frame" x="98" y="353" width="103" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV5-Pf-yQX">
-                                <rect key="frame" x="20" y="264" width="79" height="30.5"/>
+                                <rect key="frame" x="20" y="264" width="51" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-Pq-fyN">
+                                <rect key="frame" x="235" y="122" width="87.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -359,34 +361,35 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vV5-Pf-yQX" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="20" id="03r-Oz-3R0"/>
-                            <constraint firstItem="o9t-Pq-fyN" firstAttribute="top" secondItem="eRh-6X-fqz" secondAttribute="bottom" constant="10" id="1wB-p1-e5r"/>
-                            <constraint firstItem="SdW-0K-d7t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vV5-Pf-yQX" secondAttribute="trailing" constant="8" symbolic="YES" id="6TA-ZF-h98"/>
+                            <constraint firstItem="o9t-Pq-fyN" firstAttribute="top" secondItem="eRh-6X-fqz" secondAttribute="bottom" constant="-6" id="1wB-p1-e5r"/>
+                            <constraint firstItem="SdW-0K-d7t" firstAttribute="top" secondItem="doQ-2I-kC5" secondAttribute="bottom" constant="44" id="3lg-1C-xhO"/>
                             <constraint firstItem="Sog-Sg-Qvx" firstAttribute="top" secondItem="Rdl-Af-rh2" secondAttribute="bottom" constant="20" id="6vN-da-mUW"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Rdl-Af-rh2" secondAttribute="trailing" constant="243" id="8pf-xH-Hfy"/>
+                            <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SdW-0K-d7t" secondAttribute="trailing" constant="241" id="9ni-An-huK"/>
                             <constraint firstItem="eRh-6X-fqz" firstAttribute="leading" secondItem="doQ-2I-kC5" secondAttribute="trailing" constant="20" id="AtY-Pn-CIO"/>
-                            <constraint firstItem="vV5-Pf-yQX" firstAttribute="top" secondItem="doQ-2I-kC5" secondAttribute="bottom" constant="44" id="DGC-qV-xaW"/>
                             <constraint firstItem="U06-s7-7zq" firstAttribute="top" secondItem="Sog-Sg-Qvx" secondAttribute="bottom" constant="94.5" id="ISc-2p-252"/>
                             <constraint firstItem="doQ-2I-kC5" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="15" id="KVp-gt-N7K"/>
-                            <constraint firstItem="Rdl-Af-rh2" firstAttribute="top" secondItem="SdW-0K-d7t" secondAttribute="bottom" constant="20" id="OHt-ro-dPa"/>
                             <constraint firstItem="doQ-2I-kC5" firstAttribute="top" secondItem="ObP-1n-KX7" secondAttribute="top" constant="20" id="Pcb-HL-Phr"/>
                             <constraint firstItem="v2C-o6-pOz" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="20" id="QLs-FW-Isu"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" secondItem="TN5-qf-Wd5" secondAttribute="trailing" constant="20" id="S8n-kn-HUL"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="o9t-Pq-fyN" secondAttribute="trailing" constant="150" id="Tft-vy-shg"/>
+                            <constraint firstItem="vV5-Pf-yQX" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="20" id="UaT-v7-T5H"/>
+                            <constraint firstItem="SdW-0K-d7t" firstAttribute="leading" secondItem="vV5-Pf-yQX" secondAttribute="trailing" constant="34" id="Uec-Py-FLc"/>
                             <constraint firstItem="TN5-qf-Wd5" firstAttribute="top" secondItem="v2C-o6-pOz" secondAttribute="bottom" constant="20" id="WOr-PU-LP1"/>
                             <constraint firstItem="o9t-Pq-fyN" firstAttribute="leading" secondItem="doQ-2I-kC5" secondAttribute="trailing" constant="20" id="XEh-Hb-ldi"/>
-                            <constraint firstItem="eRh-6X-fqz" firstAttribute="top" secondItem="ObP-1n-KX7" secondAttribute="top" constant="100" id="Yib-wW-GXm"/>
-                            <constraint firstItem="v2C-o6-pOz" firstAttribute="top" secondItem="vV5-Pf-yQX" secondAttribute="bottom" constant="20" id="det-aP-lXe"/>
+                            <constraint firstItem="eRh-6X-fqz" firstAttribute="top" secondItem="ObP-1n-KX7" secondAttribute="top" constant="92" id="Yib-wW-GXm"/>
                             <constraint firstItem="U06-s7-7zq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ObP-1n-KX7" secondAttribute="leading" symbolic="YES" id="e5G-bF-Ku7"/>
+                            <constraint firstItem="v2C-o6-pOz" firstAttribute="top" secondItem="vV5-Pf-yQX" secondAttribute="bottom" constant="20" id="fqy-LM-MqT"/>
                             <constraint firstItem="Sog-Sg-Qvx" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="98" id="gHq-M6-YWv"/>
-                            <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" secondItem="SdW-0K-d7t" secondAttribute="trailing" constant="239" id="gay-KQ-PMJ"/>
                             <constraint firstItem="Rdl-Af-rh2" firstAttribute="leading" secondItem="v2C-o6-pOz" secondAttribute="trailing" constant="40" id="gur-eU-S5O"/>
-                            <constraint firstItem="SdW-0K-d7t" firstAttribute="top" secondItem="doQ-2I-kC5" secondAttribute="bottom" constant="50" id="hnf-k3-TLX"/>
+                            <constraint firstItem="vV5-Pf-yQX" firstAttribute="top" secondItem="doQ-2I-kC5" secondAttribute="bottom" constant="44" id="ioV-hX-8KL"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Sog-Sg-Qvx" secondAttribute="trailing" constant="213" id="l7K-kb-B7h"/>
-                            <constraint firstItem="o9t-Pq-fyN" firstAttribute="top" secondItem="eRh-6X-fqz" secondAttribute="bottom" constant="10" id="mys-7p-joa"/>
+                            <constraint firstItem="SdW-0K-d7t" firstAttribute="leading" secondItem="vV5-Pf-yQX" secondAttribute="trailing" constant="34" id="lfH-xx-mPp"/>
+                            <constraint firstItem="o9t-Pq-fyN" firstAttribute="top" secondItem="eRh-6X-fqz" secondAttribute="bottom" constant="-6" id="mys-7p-joa"/>
                             <constraint firstItem="U06-s7-7zq" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="129" id="nu2-HG-YxG"/>
                             <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" secondItem="U06-s7-7zq" secondAttribute="trailing" constant="85" id="oxY-a7-gCv"/>
-                            <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eRh-6X-fqz" secondAttribute="trailing" constant="20" id="pf7-zc-jIP"/>
+                            <constraint firstItem="ObP-1n-KX7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eRh-6X-fqz" secondAttribute="trailing" constant="36" id="pf7-zc-jIP"/>
+                            <constraint firstItem="Rdl-Af-rh2" firstAttribute="top" secondItem="SdW-0K-d7t" secondAttribute="bottom" constant="20" id="rYG-mq-iKL"/>
                             <constraint firstItem="eRh-6X-fqz" firstAttribute="leading" secondItem="doQ-2I-kC5" secondAttribute="trailing" constant="20" id="tv5-SE-wmD"/>
                             <constraint firstItem="TN5-qf-Wd5" firstAttribute="top" secondItem="Rdl-Af-rh2" secondAttribute="bottom" constant="20" id="wqd-Fk-uEb"/>
                             <constraint firstItem="TN5-qf-Wd5" firstAttribute="leading" secondItem="ObP-1n-KX7" secondAttribute="leading" constant="20" id="wvj-Sp-oCh"/>

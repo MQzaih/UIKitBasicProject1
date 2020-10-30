@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 class Service {
     fileprivate var baseUrl = ""
@@ -17,30 +16,26 @@ class Service {
         self.baseUrl = baseUrl
     }
     
-    func getUsers(){
-        AF.request("https://jsonplaceholder.typicode.com/users", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response{
-                  (responseData) in
-                  guard let data = responseData.data else {
-                      return
-                  }
-                  do {
-                  let users = try JSONDecoder().decode([user].self, from: data)
-                    self.callBack?(users,true,"")
-
-                      print(users)
-                    
-                  }
-                  catch {
-                      print("ERROR decoding\(error)")
-                    
-                    
-         self.callBack?(nil,false,error.localizedDescription)
-                  }
-              }
+    
+    func fetchUserJSON(completion: @escaping([user]?,Error?)->()){
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {return}
+        URLSession.shared.dataTask(with: url) { (data,response,error) in
+            if let err = error {
+                completion(nil,err)
+                return
+            }
+            do {
+                let  users = try JSONDecoder().decode([user].self, from: data!)
+                completion(users,nil)
+                
+            }
+                
+            catch let jsonError{
+                completion(nil,jsonError)
+            }
+            
+        } .resume()
         
-    }
-    func completionHandler(callBack:@escaping usersCallBack){
-        self.callBack = callBack
     }
 }
 
