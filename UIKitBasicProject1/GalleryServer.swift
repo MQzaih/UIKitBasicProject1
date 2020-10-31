@@ -10,7 +10,7 @@
 import Foundation
 import Alamofire
 
-struct GalleryServer {
+class GalleryServer {
     
     fileprivate var baseUrl = ""
     typealias photoCallBack = (_ photos:[Photo]?, _ status: Bool, _ message: String )->Void
@@ -38,7 +38,7 @@ struct GalleryServer {
         
     }
     
-    mutating func completionHandler(callBack:@escaping photoCallBack){
+    func completionHandler(callBack:@escaping photoCallBack){
         self.callBack = callBack
     }
     

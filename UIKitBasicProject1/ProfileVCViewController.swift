@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileVCViewController: UIViewController {
-    var name = ""
+var name = ""
     var email = ""
     var username = " "
     var phone = ""
@@ -22,7 +22,7 @@ class ProfileVCViewController: UIViewController {
     @IBOutlet var usernameLabel : UILabel!
     @IBOutlet var websiteLabel: UILabel!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,43 +32,8 @@ class ProfileVCViewController: UIViewController {
         usernameLabel.text = username
         websiteLabel.text = website
         userimg.image = UIImage(named: img)
-        
-        phoneLabel.isUserInteractionEnabled = true
-        let phoneTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(makeCall))
-        phoneTapGesture.numberOfTouchesRequired = 1
-        phoneLabel.addGestureRecognizer(phoneTapGesture)
-        
-        emailLabel.isUserInteractionEnabled = true
-        let emailTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(sendEmail))
-        emailTapGesture.numberOfTouchesRequired = 1
-        emailLabel.addGestureRecognizer(emailTapGesture)
-        
-        
     }
     
-    
-    @objc func makeCall(){
-        print("user clicked")
-        guard let number = URL(string: "tel://" + phoneLabel.text!) else { return }
-        UIApplication.shared.open(number)
-        
-    }
-    
- @objc func sendEmail(){
-        print("gmail clicked")
-   
-    let emailAddress = emailLabel.text!
-      if let url = URL(string: "mailto:\(emailAddress)") {
-        if #available(iOS 10.0, *) {
-          UIApplication.shared.open(url)
-        } else {
-          UIApplication.shared.openURL(url)}
-        }
-      }
 
-    
-    
+
 }
-
-
-

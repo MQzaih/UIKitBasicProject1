@@ -20,9 +20,10 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
         self.galleryCollectionView.delegate = self
         self.galleryCollectionView.dataSource = self
         
-        var service = GalleryServer(baseUrl: "https://jsonplaceholder.typicode.com/photos")
+        let service = GalleryServer(baseUrl: "https://jsonplaceholder.typicode.com/photos")
         
         service.getPics()
+        
         service.completionHandler {[weak self](photos,status,message) in
             if status {
                 guard let self = self else {return }
