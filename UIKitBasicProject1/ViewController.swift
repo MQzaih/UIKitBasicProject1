@@ -5,16 +5,20 @@
 //  Created by Asal 2 on 26/10/2020.
 //  Copyright © 2020 Asal 2. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import Alamofire
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class ViewController: UIViewController {
+    
+    var filteredUsers = [user]()
     var users = [user] ()
-    var khara = ""
     var index = 0
     @IBOutlet var userListTable: UITableView!
+    let userSearchBar = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         userListTable.register(nib, forCellReuseIdentifier: "TableViewCell")
@@ -29,6 +33,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 return
             }
             self.users = users!
+            self.filteredUsers = users!
+
             users?.forEach({(user1) in
                 print(user1.name)
             })
@@ -38,15 +44,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             }
             
         }
+        userSearchBar.searchBar.delegate = self
+        userSearchBar.obscuresBackgroundDuringPresentation = false
+        userSearchBar.searchResultsUpdater = self
+        userSearchBar.searchBar.placeholder = "Search for your user"
+        navigationItem.searchController = userSearchBar
+        navigationItem.hidesSearchBarWhenScrolling = true
         
     }
     
     
+    func filterCurrentDataSource(searchTerm: String){
+        if searchTerm.count > 0 {
+            filteredUsers = users
+            let filteredResults = filteredUsers.filter{ $0.name.replacingOccurrences(of: " ", with: "" ).lowercased().contains(searchTerm.replacingOccurrences(of: " ", with:"" ).lowercased())
+                
+            }
+        
+            filteredUsers = filteredResults
+            userListTable.reloadData()
+        }
+        userListTable.reloadData()
+        
+    }
     
-    
+    func restoreData (){
+        print("&&&&&")
+        print(users)
+        filteredUsers = users
+        userListTable.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return filteredUsers.count
         
     }
     
@@ -60,36 +90,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = userListTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        /* cell.userImage.image = UIImage(named: users[indexPath.row].img)*/
-        cell.username.text = users[indexPath.row].name
-        cell.email.text = users[indexPath.row].email
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            userListTable.beginUpdates()
-            users.remove(at: indexPath.row)
-            userListTable.deleteRows(at: [indexPath], with: .fade)
-            userListTable.endUpdates()
-        }
-        
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard indexPath.row < users.count else {
-            return
-            
-        }
-        index = indexPath.row
-        self.performSegue(withIdentifier: "profile", sender: self)
-    }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -111,3 +112,68 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
 }
 
+
+
+
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = userSearchBar.searchBar.text {
+            filterCurrentDataSource(searchTerm: searchText)
+            
+        }
+    }
+    
+}
+extension ViewController: UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = userListTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+          /* cell.userImage.image = UIImage(named: users[indexPath.row].img)*/
+          cell.username.text = filteredUsers[indexPath.row].name
+          cell.email.text = filteredUsers[indexPath.row].email
+          return cell
+      }
+      
+      func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+          return .delete
+      }
+      
+      
+      
+      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          if editingStyle == .delete{
+              userListTable.beginUpdates()
+              users.remove(at: indexPath.row)
+              userListTable.deleteRows(at: [indexPath], with: .fade)
+              userListTable.endUpdates()
+          }
+          
+      }
+      
+      
+      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          userSearchBar.isActive = false
+          guard indexPath.row < users.count else {
+              return
+              
+          }
+          index = indexPath.row
+          self.performSegue(withIdentifier: "profile", sender: self)
+      }
+}
+extension ViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        userSearchBar.isActive = false
+        if let searchText = searchBar.text, searchText.isEmpty {
+            restoreData()
+            
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        userSearchBar.isActive = false
+        if let searchText = searchBar.text, !searchText.isEmpty{
+            filterCurrentDataSource(searchTerm: searchText)
+        }
+    
+    }
+}

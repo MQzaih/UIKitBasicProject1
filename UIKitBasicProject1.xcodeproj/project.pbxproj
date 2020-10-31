@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063B433B254D7A3F00D104EB /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063B433A254D7A3F00D104EB /* NewProfileViewController.swift */; };
 		067E5DD02548779800908DEC /* ProfileVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E5DCF2548779800908DEC /* ProfileVCViewController.swift */; };
 		0682769A254AD397002BB9F4 /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06827699254AD397002BB9F4 /* AddProfileViewController.swift */; };
 		06ACA9732546FF5600339FCF /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACA9722546FF5600339FCF /* GalleryViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		063B433A254D7A3F00D104EB /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
 		067E5DCF2548779800908DEC /* ProfileVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCViewController.swift; sourceTree = "<group>"; };
 		06827699254AD397002BB9F4 /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
 		06ACA9722546FF5600339FCF /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				06FB8BBB254CA40700F0FEC1 /* fullScreenImgViewController.swift */,
 				067E5DCF2548779800908DEC /* ProfileVCViewController.swift */,
 				06827699254AD397002BB9F4 /* AddProfileViewController.swift */,
+				063B433A254D7A3F00D104EB /* NewProfileViewController.swift */,
 				06ACA9742547444800339FCF /* CollectionViewCell.swift */,
 				06ACA9752547444800339FCF /* CollectionViewCell.xib */,
 				06D8BC5C2546D318006C0BFF /* ViewController.swift */,
@@ -265,6 +268,7 @@
 				06FB8BB5254C400600F0FEC1 /* UserServer.swift in Sources */,
 				06D8BC5B2546D318006C0BFF /* SceneDelegate.swift in Sources */,
 				06C171092548027400005F68 /* User.swift in Sources */,
+				063B433B254D7A3F00D104EB /* NewProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

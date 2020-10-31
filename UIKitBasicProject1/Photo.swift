@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Photo: Decodable{
+struct Photo: Decodable{
     var id = 0
     var url = ""
     var thumbnailUrl = ""
