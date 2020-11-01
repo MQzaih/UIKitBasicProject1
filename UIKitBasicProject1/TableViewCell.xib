@@ -38,21 +38,32 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-lf-Ryp">
+                        <rect key="frame" x="285" y="10" width="73" height="21"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="V7D-Bv-I6o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="IgQ-yN-Eb4"/>
                     <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Iud-Hz-HqW" secondAttribute="trailing" constant="58" id="LAm-6g-0Of"/>
                     <constraint firstItem="Iud-Hz-HqW" firstAttribute="top" secondItem="fz0-Ed-fFV" secondAttribute="bottom" constant="20" id="RJX-hL-fes"/>
                     <constraint firstItem="fz0-Ed-fFV" firstAttribute="leading" secondItem="V7D-Bv-I6o" secondAttribute="trailing" constant="10" id="ZPL-le-SH9"/>
+                    <constraint firstItem="xcb-lf-Ryp" firstAttribute="leading" secondItem="V7D-Bv-I6o" secondAttribute="trailing" constant="175" id="b6j-xi-IVE"/>
                     <constraint firstItem="V7D-Bv-I6o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="blk-Pd-WQu"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fz0-Ed-fFV" secondAttribute="trailing" constant="168" id="cBj-ai-Faj"/>
                     <constraint firstItem="fz0-Ed-fFV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="heh-9n-VVl"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="xcb-lf-Ryp" secondAttribute="trailing" constant="20" id="k6H-D6-MdZ"/>
+                    <constraint firstItem="xcb-lf-Ryp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nPl-Sp-i8Y"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Iud-Hz-HqW" secondAttribute="bottom" constant="20.5" id="ppL-4y-rBz"/>
                     <constraint firstItem="Iud-Hz-HqW" firstAttribute="leading" secondItem="V7D-Bv-I6o" secondAttribute="trailing" constant="10" id="vvr-YA-wNF"/>
+                    <constraint firstItem="Iud-Hz-HqW" firstAttribute="top" secondItem="xcb-lf-Ryp" secondAttribute="bottom" constant="39" id="ybP-gN-58B"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="company" destination="xcb-lf-Ryp" id="LK7-dl-8fz"/>
                 <outlet property="email" destination="Iud-Hz-HqW" id="OWf-cp-fBL"/>
                 <outlet property="userImage" destination="V7D-Bv-I6o" id="UPe-7j-2DC"/>
                 <outlet property="username" destination="fz0-Ed-fFV" id="xCo-OK-gTF"/>

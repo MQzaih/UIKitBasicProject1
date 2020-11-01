@@ -16,8 +16,8 @@ struct user: Codable {
     var website :String = ""
     var address: Address?
     var company: Company?
-       
-    init(fullName: String, username: String, phone:String,emailAddress:String, website:String, address: Address? = nil , company: Company? = nil){
+    
+    init(fullName: String, username: String, phone:String,emailAddress:String, website:String,address: Address? = nil, company:Company? = nil){
         self.name = fullName
         self.username = username
         self.phone = phone
@@ -27,7 +27,9 @@ struct user: Codable {
         self.company = company
     }
     
- 
+    
+    
+    
 }
 
 struct Company: Codable{

@@ -13,9 +13,11 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var email : UILabel!
     @IBOutlet weak var userImage: UIImageView!
     
-
+    @IBOutlet weak var company: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        company.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

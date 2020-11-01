@@ -44,7 +44,7 @@ class GalleryServer {
     }
     
     func separateByAlbum(photos:[Photo])-> [Album]{
-           var indexOfAlbum = 0
+           var indexOfAlbum = 1
            var album1 = Album()
 
            for i in 0 ..< photos.count {

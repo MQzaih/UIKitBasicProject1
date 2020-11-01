@@ -9,9 +9,10 @@ import UIKit
 
 class CollectionReusableView: UICollectionReusableView {
 static var identifier = "SectionHeaderView"
-    public func configure(){
-        backgroundColor = .black
-        
+    
+    @IBOutlet weak var CategoryTitle: UILabel!
+    public func configure(Title:String){
+        CategoryTitle.text! = Title
     }
     
     override func layoutSubviews() {

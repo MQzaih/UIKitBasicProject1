@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class GalleryViewController: UIViewController {
     
     @IBOutlet var galleryCollectionView : UICollectionView!
     var photos = [Photo]()
@@ -18,7 +18,6 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(galleryCollectionView)
-        galleryCollectionView?.register(CollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeaderView")
         let nibName = UINib(nibName: "CollectionViewCell", bundle: nil)
         galleryCollectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
         self.galleryCollectionView.delegate = self
@@ -39,35 +38,65 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fullscreen" {
+            if let vc = segue.destination as? fullScreenImgViewController {
+                let photo1 = albums[sec].imgs[index]
+                
+                let imageUrlString = photo1.url
+                
+                if let imageUrl = URL(string: imageUrlString){
+                    
+                    let imageData = try! Data(contentsOf: imageUrl)
+                    
+                    let image = UIImage(data: imageData)
+                    
+                    vc.img = image
+                    
+                }
+                
+            }
+        }
+        
+    }
+}
 
-
+extension GalleryViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
- 
+        
         return albums[section].imgs.count
     }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
- 
+        
         return albums.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier:"CollectionViewCell", for: indexPath) as! CollectionViewCell
-          let photoCategory = albums[indexPath.section].imgs
-     
-          let img = photoCategory[indexPath.item].url
-          let imageUrl = URL(string: img)!
-          
-          let imageData = try! Data(contentsOf: imageUrl)
-
-          let image = UIImage(data: imageData)
-          cell.configure(with: image!)
-          return cell
-      }
-      
+        if let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier:"CollectionViewCell", for: indexPath) as? CollectionViewCell{
+            let photoCategory = albums[indexPath.section].imgs
+            
+            let img = photoCategory[indexPath.item].url
+            if  let imageUrl = URL(string: img){
+                
+                let imageData = try! Data(contentsOf: imageUrl)
+                
+                let image = UIImage(data: imageData)
+                cell.configure(with: image!)
+            }
+            
+            return cell
+            
+        }
+        return UICollectionViewCell()
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -91,32 +120,16 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "fullscreen" {
-            if let vc = segue.destination as? fullScreenImgViewController {
-                let photo1 = albums[sec].imgs[index]
-                
-                let imageUrlString = photo1.url
-                
-                let imageUrl = URL(string: imageUrlString)!
-                
-                let imageData = try! Data(contentsOf: imageUrl)
-                
-                let image = UIImage(data: imageData)
-               
-                vc.img = image
-                
-            }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionReusableView.identifier, for: indexPath) as? CollectionReusableView  {
+            
+            let title = "Album number\(indexPath.section+1)"
+            print(title)
+            header.configure(Title: title)
+            return header
             
         }
+        return UICollectionReusableView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionReusableView.identifier, for: indexPath) as! CollectionReusableView
-        header.configure()
-        
-        return header
-    }
 }
-
