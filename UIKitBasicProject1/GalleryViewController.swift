@@ -12,9 +12,12 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
     @IBOutlet var galleryCollectionView : UICollectionView!
     var photos = [Photo]()
     var index = 0
+    var albums = [Album]()
+    static let sectionHeaderView = "SectionHeaderView"
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(galleryCollectionView)
+        galleryCollectionView?.register(CollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeaderView")
         let nibName = UINib(nibName: "CollectionViewCell", bundle: nil)
         galleryCollectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
         self.galleryCollectionView.delegate = self
@@ -29,39 +32,43 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
                 guard let self = self else {return }
                 guard photos != nil else {return }
                 self.photos = photos!
+                self.albums = service.separateByAlbum(photos: self.photos)
                 self.galleryCollectionView.reloadData()
             }
         }
+        
+    }
+
+
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  //      print("numbers items of sections")
+    //    print(albums[section].imgs.count)
+        return albums[section].imgs.count
     }
     
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+  //  print("number of sections")
+    //print(albums.count)
+        return albums.count
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier:"CollectionViewCell", for: indexPath) as! CollectionViewCell
-        
-        let photo1 = photos[indexPath.row]
-        //print(photo1.url)
-        
-        let imageUrlString = photo1.url
-        
-        let imageUrl = URL(string: imageUrlString)!
-        
-        let imageData = try! Data(contentsOf: imageUrl)
-        
-        let image = UIImage(data: imageData)
-        cell.configure(with: image!)
-        return cell
-    }
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
-    }
-    
-    
-    
+          let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier:"CollectionViewCell", for: indexPath) as! CollectionViewCell
+          let photoCategory = albums[indexPath.section].imgs
+     
+          let img = photoCategory[indexPath.item].url
+          let imageUrl = URL(string: img)!
+          
+          let imageData = try! Data(contentsOf: imageUrl)
+
+          let image = UIImage(data: imageData)
+          cell.configure(with: image!)
+          return cell
+      }
+      
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -84,28 +91,34 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
     }
     
     
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           
-           if segue.identifier == "fullscreen" {
-               if let vc = segue.destination as? fullScreenImgViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fullscreen" {
+            if let vc = segue.destination as? fullScreenImgViewController {
                 let photo1 = photos[index]
-                      //print(photo1.url)
-                      
-                      let imageUrlString = photo1.url
-                      
-                      let imageUrl = URL(string: imageUrlString)!
-                      
-                      let imageData = try! Data(contentsOf: imageUrl)
-                      
-                      let image = UIImage(data: imageData)
-                print("*******")
-                print(index)
+                //print(photo1.url)
+                
+                let imageUrlString = photo1.url
+                
+                let imageUrl = URL(string: imageUrlString)!
+                
+                let imageData = try! Data(contentsOf: imageUrl)
+                
+                let image = UIImage(data: imageData)
+                // print("*******")
+                //print(index)
                 vc.img = image
                 
-               }
-               
-           }
-       }
+            }
+            
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionReusableView.identifier, for: indexPath) as! CollectionReusableView
+        header.configure()
+        
+        return header
+    }
 }
 

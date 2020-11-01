@@ -12,6 +12,7 @@ import Alamofire
 
 class GalleryServer {
     
+    var albums = [Album]()
     fileprivate var baseUrl = ""
     typealias photoCallBack = (_ photos:[Photo]?, _ status: Bool, _ message: String )->Void
     var callBack: photoCallBack?
@@ -26,7 +27,6 @@ class GalleryServer {
             do {
                 let photos = try JSONDecoder().decode([Photo].self, from: data)
                 self.callBack?(photos,true,"")
-           //     print(photos)
             }
             catch {
                 print("ERROR decoding\(error)")
@@ -38,10 +38,29 @@ class GalleryServer {
         
     }
     
+    
     func completionHandler(callBack:@escaping photoCallBack){
         self.callBack = callBack
     }
     
-    
+    func separateByAlbum(photos:[Photo])-> [Album]{
+           var indexOfAlbum = 0
+           var album1 = Album()
+
+           for i in 0 ..< photos.count {
+               if photos[i].albumId == indexOfAlbum{
+                   album1.num+=1
+                   album1.addImg(image: photos[i])
+                   
+               }
+               else {
+                   albums.append(album1)
+                   
+                   indexOfAlbum+=1
+               }
+           }
+           return albums
+
+       }
 }
 

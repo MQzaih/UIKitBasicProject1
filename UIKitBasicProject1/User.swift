@@ -14,13 +14,37 @@ struct user: Codable {
     var phone:String = ""
     var email :String = ""
     var website :String = ""
-    init(fullName: String, username: String, phone:String,emailAddress:String, website:String){
+    var address: Address?
+    var company: Company?
+       
+    init(fullName: String, username: String, phone:String,emailAddress:String, website:String, address: Address? = nil , company: Company? = nil){
         self.name = fullName
         self.username = username
         self.phone = phone
         self.email = emailAddress
         self.website = website
+        self.address = address
+        self.company = company
     }
     
  
+}
+
+struct Company: Codable{
+    var name: String
+    var catchPhrase: String
+    var bs: String
+}
+
+struct Address: Codable{
+    var street: String
+    var suite: String
+    var city: String
+    var zipcode: String
+    var geo: Geo
+}
+
+struct Geo: Codable{
+    var lat: String
+    var lng: String
 }

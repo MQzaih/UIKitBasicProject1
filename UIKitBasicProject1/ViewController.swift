@@ -7,7 +7,6 @@
 //
 import Foundation
 import UIKit
-import Alamofire
 class ViewController: UIViewController {
     
     var filteredUsers = [user]()
@@ -18,7 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.userListTable.rowHeight = UITableView.automaticDimension
+        self.userListTable.estimatedRowHeight = 100
         
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         userListTable.register(nib, forCellReuseIdentifier: "TableViewCell")
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             self.filteredUsers = users!
 
             users?.forEach({(user1) in
-                print(user1.name)
+               // print(user1.address!)
             })
             self.users = users!
             DispatchQueue.main.async {
@@ -69,8 +69,8 @@ class ViewController: UIViewController {
     }
     
     func restoreData (){
-        print("&&&&&")
-        print(users)
+ //       print("&&&&&")
+   //     print(users)
         filteredUsers = users
         userListTable.reloadData()
     }
@@ -102,6 +102,7 @@ class ViewController: UIViewController {
                 vc.website = users[index].website
                 vc.phone = String(users[index].phone)
                 vc.username = users[index].username
+                
             }
             
         }
@@ -142,7 +143,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
       func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
           if editingStyle == .delete{
               userListTable.beginUpdates()
-              users.remove(at: indexPath.row)
+              filteredUsers.remove(at: indexPath.row)
               userListTable.deleteRows(at: [indexPath], with: .fade)
               userListTable.endUpdates()
           }

@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Photo: Decodable{
+struct Photo: Codable{
     var id = 0
     var url = ""
     var thumbnailUrl = ""
-    
+    var albumId = 0
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case url = "url"
         case thumbnailUrl = "thumbnailUrl"
-    
+        case albumId = "albumId"
     }
 }
 
