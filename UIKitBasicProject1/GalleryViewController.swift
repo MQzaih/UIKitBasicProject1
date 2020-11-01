@@ -12,6 +12,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
     @IBOutlet var galleryCollectionView : UICollectionView!
     var photos = [Photo]()
     var index = 0
+    var sec = 0
     var albums = [Album]()
     static let sectionHeaderView = "SectionHeaderView"
     override func viewDidLoad() {
@@ -42,15 +43,13 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-  //      print("numbers items of sections")
-    //    print(albums[section].imgs.count)
+ 
         return albums[section].imgs.count
     }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-  //  print("number of sections")
-    //print(albums.count)
+ 
         return albums.count
     }
     
@@ -85,7 +84,8 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
             return
             
         }
-        index = indexPath.row
+        sec = indexPath.section
+        index = indexPath.item
         self.performSegue(withIdentifier: "fullscreen", sender: self)
         
     }
@@ -95,8 +95,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
         
         if segue.identifier == "fullscreen" {
             if let vc = segue.destination as? fullScreenImgViewController {
-                let photo1 = photos[index]
-                //print(photo1.url)
+                let photo1 = albums[sec].imgs[index]
                 
                 let imageUrlString = photo1.url
                 
@@ -105,8 +104,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate,UICollec
                 let imageData = try! Data(contentsOf: imageUrl)
                 
                 let image = UIImage(data: imageData)
-                // print("*******")
-                //print(index)
+               
                 vc.img = image
                 
             }
