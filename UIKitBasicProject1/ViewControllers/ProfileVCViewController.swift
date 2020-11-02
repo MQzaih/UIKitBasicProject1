@@ -8,8 +8,8 @@
 
 import UIKit
 import MapKit
-
-class ProfileVCViewController: UIViewController {
+import MessageUI
+class ProfileVCViewController: UIViewController,MFMailComposeViewControllerDelegate {
     var name = ""
     var email = ""
     var username = " "
@@ -96,17 +96,16 @@ class ProfileVCViewController: UIViewController {
     
     
     @objc func sendEmail(){
-        print("gmail clicked")
         
         let emailAddress = emailLabel.text!
+        
         if let url = URL(string: "mailto:\(emailAddress)") {
             if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(url)}
         }
     }
-    
     
     
     
