@@ -13,6 +13,7 @@ struct Album {
     var imgs = [Photo]()
     
    mutating func addImg(image:Photo){
+    
         imgs.append(image)
     }
 }

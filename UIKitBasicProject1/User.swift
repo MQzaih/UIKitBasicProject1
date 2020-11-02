@@ -8,12 +8,19 @@
 
 import Foundation
 
-struct user: Codable {
-    var name :String = " "
-    var username :String = " "
-    var phone:String = ""
-    var email :String = ""
-    var website :String = ""
+struct user: Codable,Equatable {
+    static func == (lhs: user, rhs: user) -> Bool {
+        if lhs.name == rhs.name{
+            return true
+        }
+        return false
+    }
+    
+    var name  = " "
+    var username  = " "
+    var phone = ""
+    var email  = ""
+    var website = ""
     var address: Address?
     var company: Company?
     
@@ -26,9 +33,7 @@ struct user: Codable {
         self.address = address
         self.company = company
     }
-    
-    
-    
+
     
 }
 

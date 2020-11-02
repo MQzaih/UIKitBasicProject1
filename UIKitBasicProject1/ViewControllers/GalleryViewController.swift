@@ -43,24 +43,16 @@ class GalleryViewController: UIViewController {
         
         if segue.identifier == "fullscreen" {
             if let vc = segue.destination as? fullScreenImgViewController {
-                let photo1 = albums[sec].imgs[index]
+                var photo1 = albums[sec].imgs[index]
                 
-                let imageUrlString = photo1.url
-                
-                if let imageUrl = URL(string: imageUrlString){
-                    
-                    let imageData = try! Data(contentsOf: imageUrl)
-                    
-                    let image = UIImage(data: imageData)
-                    
-                    vc.img = image
-                    
-                }
+                let image = photo1.convert(photoToConvert:photo1)
+                vc.img = image
                 
             }
         }
         
     }
+
 }
 
 extension GalleryViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
@@ -82,20 +74,17 @@ extension GalleryViewController:UICollectionViewDelegate,UICollectionViewDataSou
         if let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier:"CollectionViewCell", for: indexPath) as? CollectionViewCell{
             let photoCategory = albums[indexPath.section].imgs
             
-            let img = photoCategory[indexPath.item].url
-            if  let imageUrl = URL(string: img){
-                
-                let imageData = try! Data(contentsOf: imageUrl)
-                
-                let image = UIImage(data: imageData)
-                cell.configure(with: image!)
-            }
+            var img = photoCategory[indexPath.item]
+            let image = img.convert(photoToConvert:img)
+            cell.configure(with: image)
+            
             
             return cell
-            
         }
+        
         return UICollectionViewCell()
     }
+    
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

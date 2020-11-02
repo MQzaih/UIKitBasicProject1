@@ -12,7 +12,7 @@ static var identifier = "SectionHeaderView"
     
     @IBOutlet weak var CategoryTitle: UILabel!
     public func configure(Title:String){
-        CategoryTitle.text! = Title
+        CategoryTitle.text = Title
     }
     
     override func layoutSubviews() {

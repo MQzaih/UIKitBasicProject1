@@ -43,8 +43,8 @@ class ViewController: UIViewController {
                 self.userListTable.reloadData()
             }
         }
-
-    
+        
+        
         userSearchBar.searchBar.delegate = self
         userSearchBar.obscuresBackgroundDuringPresentation = false
         userSearchBar.searchResultsUpdater = self
@@ -53,22 +53,22 @@ class ViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = true
         generateRandomNumbers()
         addFromUserDef()
-
+        
         
     }
     
     func addFromUserDef(){
         if let objects = UserDefaults.standard.value(forKey: "user_object") as? Data {
-                      let decoder = JSONDecoder()
-                      if let obj = try? decoder.decode(Array.self, from: objects) as [user]{
-                          newUsers = obj
-                        print(obj)
-                        filteredUsers.append(contentsOf: newUsers)
-                        userListTable.reloadData()
-                      }
-                    
-                  }
+            let decoder = JSONDecoder()
+            if let obj = try? decoder.decode(Array.self, from: objects) as [user]{
+                newUsers = obj
+                filteredUsers.append(contentsOf: newUsers)
+                userListTable.reloadData()
+            }
+        }
     }
+    
+    
     func filterCurrentDataSource(searchTerm: String){
         if searchTerm.count > 0 {
             filteredUsers = users
@@ -108,7 +108,9 @@ class ViewController: UIViewController {
                 vc.username = filteredUsers[index].username
                 if filteredUsers[index].company != nil{
                     vc.comp = filteredUsers[index].company!
-                    print("its not nil")
+                }
+                if filteredUsers[index].address != nil{
+                    vc.address = filteredUsers[index].address!
                 }
             }
             
@@ -171,7 +173,14 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             userListTable.beginUpdates()
+            print(newUsers.count)
+            if let indexToRemove = newUsers.firstIndex(of: filteredUsers[indexPath.row]) {
+                newUsers.remove(at:indexToRemove)
+            }
+            
+            print(newUsers.count)
             filteredUsers.remove(at: indexPath.row)
+            
             userListTable.deleteRows(at: [indexPath], with: .fade)
             userListTable.endUpdates()
         }

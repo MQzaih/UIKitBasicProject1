@@ -70,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064187F7254F31F7008657AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				06ACA9722546FF5600339FCF /* GalleryViewController.swift */,
+				067E5DCF2548779800908DEC /* ProfileVCViewController.swift */,
+				06D8BC5C2546D318006C0BFF /* ViewController.swift */,
+				06827699254AD397002BB9F4 /* AddProfileViewController.swift */,
+				06FB8BBB254CA40700F0FEC1 /* fullScreenImgViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		06C171072548021500005F68 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,22 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				06C171072548021500005F68 /* Supporting Files */,
-				06C171082548027400005F68 /* User.swift */,
+				064187F7254F31F7008657AB /* ViewControllers */,
 				06C151C3254DF28E00F03AEC /* Album.swift */,
-				064187F4254E8C0B008657AB /* CollectionReusableView.swift */,
+				06C171082548027400005F68 /* User.swift */,
 				06FB8BB8254C79CC00F0FEC1 /* Photo.swift */,
-				06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */,
-				06ACA9722546FF5600339FCF /* GalleryViewController.swift */,
-				06FB8BBB254CA40700F0FEC1 /* fullScreenImgViewController.swift */,
-				067E5DCF2548779800908DEC /* ProfileVCViewController.swift */,
-				06827699254AD397002BB9F4 /* AddProfileViewController.swift */,
+				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
+				064187F4254E8C0B008657AB /* CollectionReusableView.swift */,
 				06ACA9742547444800339FCF /* CollectionViewCell.swift */,
 				06ACA9752547444800339FCF /* CollectionViewCell.xib */,
-				06D8BC5C2546D318006C0BFF /* ViewController.swift */,
+				06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */,
 				06FB8BB4254C400600F0FEC1 /* UserServer.swift */,
 				06D8BC6C2546F941006C0BFF /* TableViewCell.swift */,
 				06D8BC6D2546F941006C0BFF /* TableViewCell.xib */,
-				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
 				06D8BC662546D31A006C0BFF /* Info.plist */,
 			);
 			path = UIKitBasicProject1;
