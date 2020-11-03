@@ -19,7 +19,6 @@ class ProfileVCViewController: UIViewController,MFMailComposeViewControllerDeleg
     var address : Address?
     var comp : Company?
     var geo : Geo?
-    var zipcode = ""
     
     @IBOutlet var userimg : UIImageView!
     @IBOutlet var emailLabel : UILabel!
@@ -29,24 +28,15 @@ class ProfileVCViewController: UIViewController,MFMailComposeViewControllerDeleg
     @IBOutlet var websiteLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var zipcodeLabel: UILabel!
+    @IBOutlet weak var latlngLabel: UILabel!
     @IBOutlet weak var bsLabel: UILabel!
     
     @IBOutlet weak var catchPhraseLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        geo = address?.geo
-
-        emailLabel.text = email
-        nameLabel.text = name
-        phoneLabel.text = phone
-        usernameLabel.text = username
-        websiteLabel.text = website
-        companyLabel.text = comp?.name
-        catchPhraseLabel.text =  comp?.catchPhrase
-        bsLabel.text = comp?.bs
-        userimg.image = UIImage(named: "1")
-        addressLabel.text = address?.city
+        assignValues()
         phoneLabel.isUserInteractionEnabled = true
         let phoneTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(makeCall))
         phoneTapGesture.numberOfTouchesRequired = 1
@@ -56,32 +46,55 @@ class ProfileVCViewController: UIViewController,MFMailComposeViewControllerDeleg
         emailTapGesture.numberOfTouchesRequired = 1
         emailLabel.addGestureRecognizer(emailTapGesture)
         
-        addressLabel.isUserInteractionEnabled = true
+        latlngLabel.isUserInteractionEnabled = true
         let addressTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(openMapForPlace))
         addressTapGesture.numberOfTouchesRequired = 1
-        addressLabel.addGestureRecognizer(addressTapGesture)
+        latlngLabel.addGestureRecognizer(addressTapGesture)
     }
     
-  
+    
+    func assignValues(){
+        emailLabel.text = email
+        nameLabel.text = name
+        phoneLabel.text = phone
+        usernameLabel.text = username
+        websiteLabel.text = website
+        userimg.image = UIImage(named: "1")
+        
+        if let addressName = address {
+            geo = addressName.geo
+            zipcodeLabel.text = addressName.zipcode
+            addressLabel.text = addressName.city
+            latlngLabel.text = "\(geo!.lat) / \(geo!.lng)"
+        }
+        
+        if let company = comp {
+            companyLabel.text = company.name
+            catchPhraseLabel.text = company.catchPhrase
+            bsLabel.text = company.bs
+            
+        }
+    }
+    
     @objc func openMapForPlace() {
         
         let lat1 : NSString = self.geo!.lat as NSString
-         let lng1 : NSString = self.geo!.lng as NSString
-         
-         let latitude:CLLocationDegrees =  lat1.doubleValue
-         let longitude:CLLocationDegrees =  lng1.doubleValue
-         
-         let regionDistance:CLLocationDistance = 10000
-         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-         let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-         let options = [
-         MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-         MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-         ]
-         let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-         let mapItem = MKMapItem(placemark: placemark)
-         mapItem.name = "Place Name"
-         mapItem.openInMaps(launchOptions: options)
+        let lng1 : NSString = self.geo!.lng as NSString
+        
+        let latitude:CLLocationDegrees =  lat1.doubleValue
+        let longitude:CLLocationDegrees =  lng1.doubleValue
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Place Name"
+        mapItem.openInMaps(launchOptions: options)
         
     }
     

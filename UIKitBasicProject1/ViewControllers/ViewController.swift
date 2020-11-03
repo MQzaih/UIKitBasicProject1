@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var users = [user] ()
     var index = 0
     var defaults = UserDefaults.standard
-
+    var userToShow : user?
     let userSearchBar = UISearchController(searchResultsController: nil)
     @IBOutlet var userListTable: UITableView!
     
@@ -99,26 +99,25 @@ class ViewController: UIViewController {
     @IBAction func AddProfile(_ sender: Any) {
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "profile" {
-            if let vc = segue.destination as? ProfileVCViewController {
-                vc.name = filteredUsers[index].name
-                vc.email = filteredUsers[index].email
-                vc.website = filteredUsers[index].website
-                vc.phone = String(filteredUsers[index].phone)
-                vc.username = filteredUsers[index].username
-                if filteredUsers[index].company != nil{
-                    vc.comp = filteredUsers[index].company!
-                }
-                if filteredUsers[index].address != nil{
-                    vc.address = filteredUsers[index].address!
-                }
-            }
-            
-        }
-    }
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          
+          if segue.identifier == "profile" {
+              if let vc = segue.destination as? ProfileVCViewController {
+                  vc.name = filteredUsers[index].name
+                  vc.email = filteredUsers[index].email
+                  vc.website = filteredUsers[index].website
+                  vc.phone = String(filteredUsers[index].phone)
+                  vc.username = filteredUsers[index].username
+                  if filteredUsers[index].company != nil{
+                      vc.comp = filteredUsers[index].company!
+                  }
+                  if filteredUsers[index].address != nil{
+                      vc.address = filteredUsers[index].address!
+                  }
+              }
+              
+          }
+      }
     var previousNumber: UInt32?
     
     func randomNumber() -> UInt32 {

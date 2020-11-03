@@ -15,30 +15,42 @@ class AddProfileViewController: UIViewController {
     var website = ""
     var username = ""
     var phone = ""
+    var warning = ""
+    var city = ""
+   
+    var company : Company?
+    var address : Address?
+
     var newUsers = [user]()
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var websiteText: UITextField!
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
-    @IBOutlet weak var warning: UILabel!
+    @IBOutlet weak var cityText : UITextField!
+    @IBOutlet weak var zipcodeText : UITextField!
+    @IBOutlet weak var latText : UITextField!
+    @IBOutlet weak var lngText : UITextField!
+    @IBOutlet weak var companyText : UITextField!
+    @IBOutlet weak var bsText : UITextField!
+    @IBOutlet weak var catchPhraseText : UITextField!
+
     var defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-    var user2 : user?
+    
     
     @IBAction func validateInfo(_ sender: Any) {
-        if nameText.text == "" || usernameText.text == "" || websiteText.text == "" || emailText.text == ""{
-            warning.text = "Please Fill All Information Required!"
+        if checkIfFilledRequired(){
             return
         }
         else {
             let check = isValidEmail(emailText.text!)
             if check == false {
-                warning.text = "Please Enter a Valid Email!"
+                warning = "Please Enter a Valid Email!"
+                print(warning)
                 return
             }
             
@@ -47,22 +59,72 @@ class AddProfileViewController: UIViewController {
             phone = phoneText.text!
             email = emailText.text!
             website = websiteText.text!
+            
+        
+            if cityText.text! != "" {
+                address?.city = cityText.text!
+            }
+            
+            if zipcodeText.text != "" {
+            address?.zipcode = zipcodeText.text!
+            }
+            if (latText.text! != "") && (lngText.text! != "")
+            {
+            address?.geo.lat = latText.text!
+            address?.geo.lng = lngText.text!
+            }
+            
+            if companyText.text! != "" {
+            company?.name = companyText.text!
+            }
+            if bsText.text! != "" {
+            company?.bs = bsText.text!
+            }
+            
+            if catchPhraseText.text! != "" {
+            company?.catchPhrase = catchPhraseText.text!
+            }
             restart()
-            let newUser = user(fullName: name, username: username, phone: phone, emailAddress: email, website: website)
-            newUsers.append(newUser)
-            let encoder = JSONEncoder()
-            let encoded = try? encoder.encode(newUsers)
-            defaults.set(encoded, forKey: "user_object")
+            addToUser()
         
         }
     }
         
+    
+    func addToUser (){
+        let newUser = user(fullName: name, username: username, phone: phone, emailAddress: email, website: website,company: company)
+                   newUsers.append(newUser)
+                   let encoder = JSONEncoder()
+                   let encoded = try? encoder.encode(newUsers)
+                   defaults.set(encoded, forKey: "user_object")
+        
+    }
+    
+    func checkIfFilledRequired() -> Bool{
+        if nameText.text == "" || usernameText.text == "" || websiteText.text == "" || emailText.text == ""
+               {
+                   warning = "Please Fill All Information Required!"
+                   print(warning)
+                return true
+    }
+        return false
+    }
+    
+    
         func restart (){
             
             emailText.text = ""
             nameText.text = ""
             usernameText.text = ""
             websiteText.text = " "
+            phoneText.text = " "
+            cityText.text = " "
+            zipcodeText.text = " "
+            latText.text = " "
+            lngText.text = ""
+            companyText.text = " "
+            bsText.text = " "
+            catchPhraseText.text = " "
             
         }
         
