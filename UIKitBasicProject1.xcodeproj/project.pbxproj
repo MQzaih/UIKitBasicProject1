@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0603C9E52551EE8500C1DEEC /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0603C9E42551EE8500C1DEEC /* AddProfileViewController.swift */; };
 		064187F5254E8C0B008657AB /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064187F4254E8C0B008657AB /* CollectionReusableView.swift */; };
 		067E5DD02548779800908DEC /* ProfileVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E5DCF2548779800908DEC /* ProfileVCViewController.swift */; };
-		0682769A254AD397002BB9F4 /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06827699254AD397002BB9F4 /* AddProfileViewController.swift */; };
 		06ACA9732546FF5600339FCF /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACA9722546FF5600339FCF /* GalleryViewController.swift */; };
 		06ACA9762547444800339FCF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACA9742547444800339FCF /* CollectionViewCell.swift */; };
 		06ACA9772547444800339FCF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06ACA9752547444800339FCF /* CollectionViewCell.xib */; };
@@ -31,9 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0603C9E42551EE8500C1DEEC /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
 		064187F4254E8C0B008657AB /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		067E5DCF2548779800908DEC /* ProfileVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCViewController.swift; sourceTree = "<group>"; };
-		06827699254AD397002BB9F4 /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
 		06ACA9722546FF5600339FCF /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		06ACA9742547444800339FCF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		06ACA9752547444800339FCF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 			children = (
 				06ACA9722546FF5600339FCF /* GalleryViewController.swift */,
 				067E5DCF2548779800908DEC /* ProfileVCViewController.swift */,
+				0603C9E42551EE8500C1DEEC /* AddProfileViewController.swift */,
 				06D8BC5C2546D318006C0BFF /* ViewController.swift */,
-				06827699254AD397002BB9F4 /* AddProfileViewController.swift */,
 				06FB8BBB254CA40700F0FEC1 /* fullScreenImgViewController.swift */,
 			);
 			path = ViewControllers;
@@ -273,7 +273,7 @@
 				06FB8BB7254C702800F0FEC1 /* GalleryServer.swift in Sources */,
 				06D8BC6E2546F941006C0BFF /* TableViewCell.swift in Sources */,
 				06ACA9762547444800339FCF /* CollectionViewCell.swift in Sources */,
-				0682769A254AD397002BB9F4 /* AddProfileViewController.swift in Sources */,
+				0603C9E52551EE8500C1DEEC /* AddProfileViewController.swift in Sources */,
 				06ACA9732546FF5600339FCF /* GalleryViewController.swift in Sources */,
 				06D8BC592546D318006C0BFF /* AppDelegate.swift in Sources */,
 				06FB8BBC254CA40700F0FEC1 /* fullScreenImgViewController.swift in Sources */,

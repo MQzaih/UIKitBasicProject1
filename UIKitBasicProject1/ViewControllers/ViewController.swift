@@ -97,6 +97,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func AddProfile(_ sender: Any) {
+
     }
     
       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -159,7 +160,6 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 cell.company.isHidden = false
                 cell.companyName.isHidden = false
             }
-            /* cell.userImage.image = UIImage(named: users[indexPath.row].img)*/
             cell.username.text = filteredUsers[indexPath.row].name
             cell.email.text = filteredUsers[indexPath.row].email
             return cell
@@ -176,7 +176,6 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             userListTable.beginUpdates()
-            print(newUsers.count)
             if let indexToRemove = newUsers.firstIndex(of: filteredUsers[indexPath.row]) {
                 newUsers.remove(at:indexToRemove)
                 defaults.set(newUsers, forKey: "user_object")

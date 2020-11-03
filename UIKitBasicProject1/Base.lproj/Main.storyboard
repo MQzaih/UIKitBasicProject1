@@ -206,7 +206,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="validateInfo:" destination="AvJ-w9-hGA" eventType="touchUpInside" id="B95-wL-dxq"/>
+                                                    <action selector="validateInfo:" destination="AvJ-w9-hGA" eventType="touchUpInside" id="YMJ-A8-1kR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olH-D1-UyO">
@@ -214,7 +214,7 @@
                                                 <color key="tintColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="backward.fill" catalog="system"/>
                                                 <connections>
-                                                    <segue destination="s6K-lv-rtr" kind="show" identifier="first" id="6xa-qY-M82"/>
+                                                    <segue destination="s6K-lv-rtr" kind="show" identifier="first" id="kd5-NC-o2c"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -317,24 +317,23 @@
                     </view>
                     <navigationItem key="navigationItem" id="iX6-xN-6bq"/>
                     <connections>
-                        <outlet property="bsText" destination="38d-Yd-Ufw" id="3cV-VB-qEF"/>
-                        <outlet property="catchPhraseText" destination="tvh-0m-z1n" id="HUj-fG-ZoC"/>
-                        <outlet property="city" destination="qbc-OB-Cj2" id="qjK-nb-q8l"/>
-                        <outlet property="cityText" destination="qbc-OB-Cj2" id="PUX-IH-v89"/>
-                        <outlet property="companyText" destination="7kB-XO-dej" id="bWc-Lh-tLf"/>
-                        <outlet property="emailText" destination="ETr-db-9xM" id="oaY-aL-khy"/>
-                        <outlet property="latText" destination="COj-pj-mm2" id="lhX-b1-Vb6"/>
-                        <outlet property="lngText" destination="rMS-fY-igh" id="XxC-z6-G6l"/>
-                        <outlet property="nameText" destination="AjC-cI-ln3" id="9CF-wJ-PvY"/>
-                        <outlet property="phoneText" destination="KtE-7F-uNg" id="075-nt-KPW"/>
-                        <outlet property="usernameText" destination="TQ4-Av-c5l" id="jG3-mj-ViW"/>
-                        <outlet property="websiteText" destination="yia-NM-ZjE" id="OIJ-Lb-6tW"/>
-                        <outlet property="zipcodeText" destination="iEK-zo-4Ay" id="yfR-EE-3Pt"/>
+                        <outlet property="bsText" destination="38d-Yd-Ufw" id="eTb-9t-CIP"/>
+                        <outlet property="catchPhraseText" destination="tvh-0m-z1n" id="nM2-fo-02I"/>
+                        <outlet property="cityText" destination="qbc-OB-Cj2" id="VUa-OF-lH6"/>
+                        <outlet property="companyText" destination="7kB-XO-dej" id="NwZ-Gi-XtE"/>
+                        <outlet property="emailText" destination="ETr-db-9xM" id="oPd-X1-1W1"/>
+                        <outlet property="latText" destination="COj-pj-mm2" id="ajf-oF-XYM"/>
+                        <outlet property="lngText" destination="rMS-fY-igh" id="euP-gM-AON"/>
+                        <outlet property="nameText" destination="AjC-cI-ln3" id="bOf-2Q-SOJ"/>
+                        <outlet property="phoneText" destination="KtE-7F-uNg" id="VB9-kP-5QM"/>
+                        <outlet property="usernameText" destination="TQ4-Av-c5l" id="ssy-sq-f0t"/>
+                        <outlet property="websiteText" destination="yia-NM-ZjE" id="A24-GT-VTd"/>
+                        <outlet property="zipcodeText" destination="iEK-zo-4Ay" id="ys6-2M-GOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7if-NU-AQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4501" y="1658"/>
+            <point key="canvasLocation" x="-4501.449275362319" y="1657.3660714285713"/>
         </scene>
         <!--User List-->
         <scene sceneID="L7J-hE-Bs6">
@@ -353,7 +352,7 @@
                                     <state key="normal" title="Add"/>
                                     <connections>
                                         <action selector="AddProfile:" destination="s6K-lv-rtr" eventType="touchUpInside" id="Rkc-Gg-DPF"/>
-                                        <segue destination="AvJ-w9-hGA" kind="showDetail" id="Ok4-mC-2Zt"/>
+                                        <segue destination="AvJ-w9-hGA" kind="showDetail" id="Zal-wb-t9r"/>
                                     </connections>
                                 </button>
                             </tableView>
@@ -717,8 +716,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ok4-mC-2Zt"/>
-        <segue reference="6xa-qY-M82"/>
+        <segue reference="Zal-wb-t9r"/>
+        <segue reference="kd5-NC-o2c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="3" width="540" height="960"/>

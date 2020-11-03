@@ -43,7 +43,7 @@ class AddProfileViewController: UIViewController {
     
     
     @IBAction func validateInfo(_ sender: Any) {
-        if checkIfFilledRequired(){
+        if !checkIfFilledRequired(){
             return
         }
         else {
@@ -84,8 +84,10 @@ class AddProfileViewController: UIViewController {
             if catchPhraseText.text! != "" {
             company?.catchPhrase = catchPhraseText.text!
             }
+
             restart()
             addToUser()
+
         
         }
     }
@@ -105,9 +107,9 @@ class AddProfileViewController: UIViewController {
                {
                    warning = "Please Fill All Information Required!"
                    print(warning)
-                return true
+                return false
     }
-        return false
+        return true
     }
     
     
@@ -133,9 +135,9 @@ class AddProfileViewController: UIViewController {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
             
             let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-            let x = emailPred.evaluate(with: email)
-            print(x)
-            return emailPred.evaluate(with: email)
+            let flagEmail = emailPred.evaluate(with: email)
+           // print(x)
+            return flagEmail
         }
         
         
@@ -143,8 +145,7 @@ class AddProfileViewController: UIViewController {
             
             if  let destVC = segue.destination as? ViewController {
                 destVC.newUsers.append(contentsOf: newUsers)
-                destVC.filteredUsers.append(contentsOf: newUsers)
-                destVC.userListTable.reloadData()
+                //destVC.filteredUsers.append(contentsOf: newUsers)
             }
             
         }
