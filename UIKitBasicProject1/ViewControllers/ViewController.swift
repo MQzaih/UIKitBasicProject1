@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var filteredUsers = [user]()
     var users = [user] ()
     var index = 0
+    var defaults = UserDefaults.standard
+
     let userSearchBar = UISearchController(searchResultsController: nil)
     @IBOutlet var userListTable: UITableView!
     
@@ -68,6 +70,7 @@ class ViewController: UIViewController {
         }
     }
     
+
     
     func filterCurrentDataSource(searchTerm: String){
         if searchTerm.count > 0 {
@@ -155,6 +158,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             if randomArray.contains(indexPath.row){
                 cell.company.text = filteredUsers[indexPath.row].company?.name
                 cell.company.isHidden = false
+                cell.companyName.isHidden = false
             }
             /* cell.userImage.image = UIImage(named: users[indexPath.row].img)*/
             cell.username.text = filteredUsers[indexPath.row].name
@@ -176,11 +180,12 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             print(newUsers.count)
             if let indexToRemove = newUsers.firstIndex(of: filteredUsers[indexPath.row]) {
                 newUsers.remove(at:indexToRemove)
+                defaults.set(newUsers, forKey: "user_object")
+                
             }
             
-            print(newUsers.count)
-            filteredUsers.remove(at: indexPath.row)
             
+            filteredUsers.remove(at: indexPath.row)
             userListTable.deleteRows(at: [indexPath], with: .fade)
             userListTable.endUpdates()
         }

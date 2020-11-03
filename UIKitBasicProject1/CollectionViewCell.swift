@@ -17,7 +17,7 @@ class CollectionViewCell: UICollectionViewCell {
     public func configure(with image: UIImage){
         
         userImage.image = image
-            userImage.frame = CGRect(x:0,y:0,width:contentView.frame.size.width, height:contentView.frame.size.height)
+        userImage.frame = CGRect(x:20,y:20,width:contentView.frame.size.width-40, height:contentView.frame.size.height-40)
     }
     
 }

@@ -48,6 +48,7 @@ class GalleryViewController: UIViewController {
                 let image = photo1.convert(photoToConvert:photo1)
                 vc.img = image
                 
+                
             }
         }
         
