@@ -119,9 +119,9 @@ class AddProfileViewController: UIViewController {
     
     func restart (){
         
-        emailText.text = ""
-        nameText.text = ""
-        usernameText.text = ""
+        emailText.text = " "
+        nameText.text = " "
+        usernameText.text = " "
         websiteText.text = " "
         phoneText.text = " "
         cityText.text = " "

@@ -169,10 +169,10 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if  let cell = userListTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell{
             if randomArray.contains(indexPath.row){
-                cell.company.text = filteredUsers[indexPath.row].company?.name
                 cell.company.isHidden = false
                 cell.companyName.isHidden = false
             }
+            cell.company.text = filteredUsers[indexPath.row].company!.name
             cell.username.text = filteredUsers[indexPath.row].name
             cell.email.text = filteredUsers[indexPath.row].email
             return cell

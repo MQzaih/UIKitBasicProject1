@@ -535,8 +535,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-KR-g4m">
-                                                <rect key="frame" x="37" y="62" width="31" height="19"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-KR-g4m">
+                                                <rect key="frame" x="37" y="61" width="31" height="20"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21.5" id="0ak-ac-t1k"/>
@@ -595,7 +595,7 @@
                                                 <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="bag.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-5s-SFE">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="bag" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-5s-SFE">
                                                 <rect key="frame" x="42" y="302" width="19" height="19"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -624,7 +624,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asal Technologies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65c-5P-qfd">
-                                                <rect key="frame" x="117" y="302" width="133" height="25"/>
+                                                <rect key="frame" x="117" y="300" width="133" height="25"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <color key="textColor" red="0.62436238580000003" green="0.39506675279999998" blue="0.90092321129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -646,7 +646,7 @@
                                             <constraint firstItem="65c-5P-qfd" firstAttribute="leading" secondItem="Fh4-5s-SFE" secondAttribute="trailing" constant="56" id="IdD-3K-vDF"/>
                                             <constraint firstItem="8wm-Um-ole" firstAttribute="top" secondItem="LeS-SO-VgB" secondAttribute="bottom" constant="21.5" id="IpT-Mf-TCI"/>
                                             <constraint firstItem="mHJ-KR-g4m" firstAttribute="top" secondItem="dw2-Lc-keq" secondAttribute="bottom" constant="22.5" id="Je0-sK-QGy"/>
-                                            <constraint firstItem="65c-5P-qfd" firstAttribute="top" secondItem="u6a-vX-Ztl" secondAttribute="bottom" constant="18.5" id="Jqx-80-prV"/>
+                                            <constraint firstItem="65c-5P-qfd" firstAttribute="top" secondItem="u6a-vX-Ztl" secondAttribute="bottom" constant="16.5" id="Jqx-80-prV"/>
                                             <constraint firstItem="Fh4-5s-SFE" firstAttribute="top" secondItem="let-y9-D5O" secondAttribute="bottom" constant="21.5" id="Kym-nm-w1M"/>
                                             <constraint firstItem="dw2-Lc-keq" firstAttribute="top" secondItem="NIN-cH-lKT" secondAttribute="top" constant="8" id="M9y-Hv-s2C"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="Qso-6x-UGC"/>
@@ -655,6 +655,7 @@
                                             <constraint firstItem="l3M-03-VZq" firstAttribute="leading" secondItem="NIN-cH-lKT" secondAttribute="leading" constant="117" id="Uhx-Td-Pr6"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eg7-kN-g8h" secondAttribute="trailing" constant="176" id="Vam-1Y-u2p"/>
                                             <constraint firstItem="8wm-Um-ole" firstAttribute="leading" secondItem="onK-dw-HGy" secondAttribute="trailing" constant="48" id="Whe-ND-TUu"/>
+                                            <constraint firstItem="bQP-yS-M4F" firstAttribute="top" secondItem="l3M-03-VZq" secondAttribute="bottom" constant="5" id="XYQ-hA-497"/>
                                             <constraint firstItem="onK-dw-HGy" firstAttribute="top" secondItem="mHJ-KR-g4m" secondAttribute="bottom" constant="24" id="Y9o-Ts-Uws"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="u6a-vX-Ztl" secondAttribute="trailing" constant="199" id="apP-ab-INj"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="bJn-cU-sTA"/>
@@ -668,7 +669,7 @@
                                             <constraint firstItem="jXg-9Q-WWf" firstAttribute="top" secondItem="onK-dw-HGy" secondAttribute="bottom" constant="24" id="mXo-VJ-KhG"/>
                                             <constraint firstItem="jXg-9Q-WWf" firstAttribute="leading" secondItem="NIN-cH-lKT" secondAttribute="leading" constant="43" id="mfV-vZ-gbZ"/>
                                             <constraint firstItem="l3M-03-VZq" firstAttribute="top" secondItem="eg7-kN-g8h" secondAttribute="bottom" constant="5" id="nfK-ru-m79"/>
-                                            <constraint firstItem="VNL-hn-Qbv" firstAttribute="top" secondItem="65c-5P-qfd" secondAttribute="bottom" constant="2" id="oLG-zb-pPk"/>
+                                            <constraint firstItem="VNL-hn-Qbv" firstAttribute="top" secondItem="65c-5P-qfd" secondAttribute="bottom" constant="4" id="oLG-zb-pPk"/>
                                             <constraint firstItem="eg7-kN-g8h" firstAttribute="leading" secondItem="jXg-9Q-WWf" secondAttribute="trailing" constant="51.5" id="oWu-aU-dg8"/>
                                             <constraint firstItem="u6a-vX-Ztl" firstAttribute="top" secondItem="bQP-yS-M4F" secondAttribute="bottom" constant="22.5" id="sqC-Tz-VYM"/>
                                             <constraint firstItem="VNL-hn-Qbv" firstAttribute="leading" secondItem="NIN-cH-lKT" secondAttribute="leading" constant="116" id="uAB-lM-DMZ"/>
@@ -734,12 +735,12 @@
         <image name="3" width="540" height="960"/>
         <image name="at" catalog="system" width="128" height="124"/>
         <image name="backward.fill" catalog="system" width="128" height="79"/>
-        <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="bag" catalog="system" width="128" height="128"/>
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <image name="link" catalog="system" width="128" height="116"/>
         <image name="map" catalog="system" width="128" height="113"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
         <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
     </resources>
 </document>
