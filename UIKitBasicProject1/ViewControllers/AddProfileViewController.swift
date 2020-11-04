@@ -93,12 +93,32 @@ class AddProfileViewController: UIViewController {
     
     
     func addToUser (){
+
+
+        if let objects = UserDefaults.standard.value(forKey: "user_object") as? Data {
+
+        let decoder = JSONDecoder()
+
+        if let obj = try? decoder.decode(Array.self, from: objects) as [user]{
+
+            newUsers = obj
+
+            }
+
+        }
+
         let newUser = user(fullName: name, username: username, phone: phone, emailAddress: email, website: website,company: company)
+
         newUsers.append(newUser)
+
         let encoder = JSONEncoder()
+
         let encoded = try? encoder.encode(newUsers)
+
         defaults.set(encoded, forKey: "user_object")
+
         
+
     }
     
     func checkIfFilledRequired() -> Bool{

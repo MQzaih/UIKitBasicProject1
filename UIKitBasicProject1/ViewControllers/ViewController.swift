@@ -59,12 +59,21 @@ class ViewController: UIViewController {
         
     }
     
+     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("hello")
+        addFromUserDef()
+        filteredUsers = users
+        filteredUsers.append(contentsOf: newUsers)
+        userListTable.reloadData()
+        
+    }
     func addFromUserDef(){
         if let objects = UserDefaults.standard.value(forKey: "user_object") as? Data {
             let decoder = JSONDecoder()
             if let obj = try? decoder.decode(Array.self, from: objects) as [user]{
                 newUsers = obj
-                filteredUsers.append(contentsOf: newUsers)
+         //       filteredUsers.append(contentsOf: newUsers)
                 userListTable.reloadData()
             }
         }
@@ -74,7 +83,6 @@ class ViewController: UIViewController {
     
     func filterCurrentDataSource(searchTerm: String){
         if searchTerm.count > 0 {
-            filteredUsers = users
             let filteredResults = filteredUsers.filter{ $0.name.replacingOccurrences(of: " ", with: "" ).lowercased().contains(searchTerm.replacingOccurrences(of: " ", with:"" ).lowercased())
                 
             }
@@ -136,7 +144,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToOne (_sender:UIStoryboardSegue){
-        
+        if _sender.identifier == "backToFirst"
+        {
+            print("from backtofirst")
+                   addFromUserDef()
+                   filteredUsers = users
+                   filteredUsers.append(contentsOf: newUsers)
+                   userListTable.reloadData()
+        }
     }
 }
 
@@ -177,9 +192,9 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         if editingStyle == .delete{
             userListTable.beginUpdates()
             if let indexToRemove = newUsers.firstIndex(of: filteredUsers[indexPath.row]) {
-                newUsers.remove(at:indexToRemove)
-                defaults.set(newUsers, forKey: "user_object")
-                
+              newUsers.remove(at:indexToRemove)
+              defaults.set(newUsers, forKey: "user_object")
+
             }
             
             
