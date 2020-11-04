@@ -17,10 +17,10 @@ class AddProfileViewController: UIViewController {
     var phone = ""
     var warning = ""
     var city = ""
-   
+    
     var company : Company?
     var address : Address?
-
+    
     var newUsers = [user]()
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
@@ -34,7 +34,7 @@ class AddProfileViewController: UIViewController {
     @IBOutlet weak var companyText : UITextField!
     @IBOutlet weak var bsText : UITextField!
     @IBOutlet weak var catchPhraseText : UITextField!
-
+    
     var defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -60,93 +60,93 @@ class AddProfileViewController: UIViewController {
             email = emailText.text!
             website = websiteText.text!
             
-        
+            
             if cityText.text! != "" {
                 address?.city = cityText.text!
             }
             
             if zipcodeText.text != "" {
-            address?.zipcode = zipcodeText.text!
+                address?.zipcode = zipcodeText.text!
             }
             if (latText.text! != "") && (lngText.text! != "")
             {
-            address?.geo.lat = latText.text!
-            address?.geo.lng = lngText.text!
+                address?.geo.lat = latText.text!
+                address?.geo.lng = lngText.text!
             }
             
             if companyText.text! != "" {
-            company?.name = companyText.text!
+                company?.name = companyText.text!
             }
             if bsText.text! != "" {
-            company?.bs = bsText.text!
+                company?.bs = bsText.text!
             }
             
             if catchPhraseText.text! != "" {
-            company?.catchPhrase = catchPhraseText.text!
+                company?.catchPhrase = catchPhraseText.text!
             }
-
-            restart()
             addToUser()
-
-        
+            
+            restart()
+            
         }
     }
-        
+    
     
     func addToUser (){
         let newUser = user(fullName: name, username: username, phone: phone, emailAddress: email, website: website,company: company)
-                   newUsers.append(newUser)
-                   let encoder = JSONEncoder()
-                   let encoded = try? encoder.encode(newUsers)
-                   defaults.set(encoded, forKey: "user_object")
+        newUsers.append(newUser)
+        let encoder = JSONEncoder()
+        let encoded = try? encoder.encode(newUsers)
+        defaults.set(encoded, forKey: "user_object")
         
     }
     
     func checkIfFilledRequired() -> Bool{
         if nameText.text == "" || usernameText.text == "" || websiteText.text == "" || emailText.text == ""
-               {
-                   warning = "Please Fill All Information Required!"
-                   print(warning)
-                return false
-    }
+        {
+            warning = "Please Fill All Information Required!"
+            print(warning)
+            return false
+        }
         return true
     }
     
     
-        func restart (){
-            
-            emailText.text = ""
-            nameText.text = ""
-            usernameText.text = ""
-            websiteText.text = " "
-            phoneText.text = " "
-            cityText.text = " "
-            zipcodeText.text = " "
-            latText.text = " "
-            lngText.text = ""
-            companyText.text = " "
-            bsText.text = " "
-            catchPhraseText.text = " "
-            
+    func restart (){
+        
+        emailText.text = ""
+        nameText.text = ""
+        usernameText.text = ""
+        websiteText.text = " "
+        phoneText.text = " "
+        cityText.text = " "
+        zipcodeText.text = " "
+        latText.text = " "
+        lngText.text = ""
+        companyText.text = " "
+        bsText.text = " "
+        catchPhraseText.text = " "
+        
+    }
+    
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let flagEmail = emailPred.evaluate(with: email)
+        // print(x)
+        return flagEmail
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue,sender: Any?){
+        
+        if  let destVC = segue.destination as? ViewController {
+            destVC.newUsers.append(contentsOf: newUsers)
+           // destVC.filteredUsers.append(contentsOf: newUsers)
+            //  destVC.userListTable.reloadData()
         }
         
-        
-        func isValidEmail(_ email: String) -> Bool {
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            
-            let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-            let flagEmail = emailPred.evaluate(with: email)
-           // print(x)
-            return flagEmail
-        }
-        
-        
-        override func prepare(for segue: UIStoryboardSegue,sender: Any?){
-            
-            if  let destVC = segue.destination as? ViewController {
-                destVC.newUsers.append(contentsOf: newUsers)
-                //destVC.filteredUsers.append(contentsOf: newUsers)
-            }
-            
-        }
+    }
 }
