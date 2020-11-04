@@ -56,24 +56,23 @@ class ViewController: UIViewController {
         generateRandomNumbers()
         addFromUserDef()
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("hello")
+       super.viewWillAppear(animated)
         addFromUserDef()
         filteredUsers = users
         filteredUsers.append(contentsOf: newUsers)
         userListTable.reloadData()
-        
     }
+    
+    
     func addFromUserDef(){
         if let objects = UserDefaults.standard.value(forKey: "user_object") as? Data {
             let decoder = JSONDecoder()
             if let obj = try? decoder.decode(Array.self, from: objects) as [user]{
                 newUsers = obj
-            filteredUsers.append(contentsOf: newUsers)
+                filteredUsers.append(contentsOf: newUsers)
                 userListTable.reloadData()
             }
         }
@@ -146,7 +145,6 @@ class ViewController: UIViewController {
     @IBAction func unwindToOne (_sender:UIStoryboardSegue){
         if _sender.identifier == "backToFirst"
         {
-            print("from backtofirst")
             addFromUserDef()
             filteredUsers = users
             filteredUsers.append(contentsOf: newUsers)
@@ -211,14 +209,15 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         userSearchBar.isActive = false
-        guard indexPath.row < users.count else {
+        guard indexPath.row < filteredUsers.count else {
             return
-            
         }
         index = indexPath.row
+       
         self.performSegue(withIdentifier: "profile", sender: self)
     }
 }
+
 extension ViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         userSearchBar.isActive = false

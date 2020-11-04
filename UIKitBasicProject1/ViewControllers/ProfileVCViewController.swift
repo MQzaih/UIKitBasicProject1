@@ -68,11 +68,13 @@ class ProfileVCViewController: UIViewController,MFMailComposeViewControllerDeleg
             latlngLabel.text = "\(geo!.lat) / \(geo!.lng)"
         }
         
+       
         if let company = comp {
             companyLabel.text = company.name
             catchPhraseLabel.text = company.catchPhrase
             bsLabel.text = company.bs
             
+        
         }
     }
     

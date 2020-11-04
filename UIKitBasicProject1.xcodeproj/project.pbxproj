@@ -70,14 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0603C9E8255306EB00C1DEEC /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		064187F7254F31F7008657AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +116,8 @@
 			children = (
 				06C171072548021500005F68 /* Supporting Files */,
 				064187F7254F31F7008657AB /* ViewControllers */,
-				0603C9E8255306EB00C1DEEC /* Storyboard */,
 				06D8BC662546D31A006C0BFF /* Info.plist */,
+				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
 				06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */,
 				06C171082548027400005F68 /* User.swift */,
 				06FB8BB8254C79CC00F0FEC1 /* Photo.swift */,

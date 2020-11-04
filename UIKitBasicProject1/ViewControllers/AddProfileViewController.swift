@@ -17,10 +17,13 @@ class AddProfileViewController: UIViewController {
     var phone = ""
     var warning = ""
     var city = ""
-    
+    var zipcode = ""
+    var lng = ""
+    var lat = ""
+
     var company : Company?
     var address : Address?
-    
+    var geo : Geo?
     var newUsers = [user]()
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
@@ -60,30 +63,12 @@ class AddProfileViewController: UIViewController {
             email = emailText.text!
             website = websiteText.text!
             
+         
             
-            if cityText.text! != "" {
-                address?.city = cityText.text!
-            }
+            address = Address(street: " ", suite: " ", city: cityText.text!, zipcode: zipcodeText.text!, geo: Geo(lat: latText.text!, lng: lngText.text!))
+       
+             company = Company(name: companyText.text! , catchPhrase: catchPhraseText.text!, bs: bsText.text!)
             
-            if zipcodeText.text != "" {
-                address?.zipcode = zipcodeText.text!
-            }
-            if (latText.text! != "") && (lngText.text! != "")
-            {
-                address?.geo.lat = latText.text!
-                address?.geo.lng = lngText.text!
-            }
-            
-            if companyText.text! != "" {
-                company?.name = companyText.text!
-            }
-            if bsText.text! != "" {
-                company?.bs = bsText.text!
-            }
-            
-            if catchPhraseText.text! != "" {
-                company?.catchPhrase = catchPhraseText.text!
-            }
             addToUser()
             
             restart()
@@ -107,7 +92,7 @@ class AddProfileViewController: UIViewController {
 
         }
 
-        let newUser = user(fullName: name, username: username, phone: phone, emailAddress: email, website: website,company: company)
+        let newUser = user(fullName: name, username: username, phone: phone, emailAddress: email, website: website, address: address, company: company)
 
         newUsers.append(newUser)
 
@@ -155,7 +140,6 @@ class AddProfileViewController: UIViewController {
         
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         let flagEmail = emailPred.evaluate(with: email)
-        // print(x)
         return flagEmail
     }
     
@@ -164,8 +148,8 @@ class AddProfileViewController: UIViewController {
         
         if  let destVC = segue.destination as? ViewController {
             destVC.newUsers.append(contentsOf: newUsers)
-           // destVC.filteredUsers.append(contentsOf: newUsers)
-            //  destVC.userListTable.reloadData()
+           //destVC.filteredUsers.append(contentsOf: newUsers)
+            //destVC.userListTable.reloadData()
         }
         
     }
