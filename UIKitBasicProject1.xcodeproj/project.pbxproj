@@ -70,36 +70,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0603C9E62553067500C1DEEC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				064187F4254E8C0B008657AB /* CollectionReusableView.swift */,
-				06ACA9752547444800339FCF /* CollectionViewCell.xib */,
-				06D8BC6C2546F941006C0BFF /* TableViewCell.swift */,
-				06D8BC6D2546F941006C0BFF /* TableViewCell.xib */,
-				06ACA9742547444800339FCF /* CollectionViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		0603C9E8255306EB00C1DEEC /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				06D8BC5E2546D318006C0BFF /* Main.storyboard */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		0603C9EA2553070F00C1DEEC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				06C151C3254DF28E00F03AEC /* Album.swift */,
-				06FB8BB8254C79CC00F0FEC1 /* Photo.swift */,
-				06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */,
-				06C171082548027400005F68 /* User.swift */,
-				06FB8BB4254C400600F0FEC1 /* UserServer.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		064187F7254F31F7008657AB /* ViewControllers */ = {
@@ -146,12 +122,20 @@
 		06D8BC572546D318006C0BFF /* UIKitBasicProject1 */ = {
 			isa = PBXGroup;
 			children = (
-				0603C9EA2553070F00C1DEEC /* Model */,
 				06C171072548021500005F68 /* Supporting Files */,
 				064187F7254F31F7008657AB /* ViewControllers */,
 				0603C9E8255306EB00C1DEEC /* Storyboard */,
-				0603C9E62553067500C1DEEC /* Views */,
 				06D8BC662546D31A006C0BFF /* Info.plist */,
+				06FB8BB6254C702800F0FEC1 /* GalleryServer.swift */,
+				06C171082548027400005F68 /* User.swift */,
+				06FB8BB8254C79CC00F0FEC1 /* Photo.swift */,
+				064187F4254E8C0B008657AB /* CollectionReusableView.swift */,
+				06FB8BB4254C400600F0FEC1 /* UserServer.swift */,
+				06C151C3254DF28E00F03AEC /* Album.swift */,
+				06D8BC6C2546F941006C0BFF /* TableViewCell.swift */,
+				06D8BC6D2546F941006C0BFF /* TableViewCell.xib */,
+				06ACA9742547444800339FCF /* CollectionViewCell.swift */,
+				06ACA9752547444800339FCF /* CollectionViewCell.xib */,
 			);
 			path = UIKitBasicProject1;
 			sourceTree = "<group>";
