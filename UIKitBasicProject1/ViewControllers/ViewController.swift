@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         
     }
     
-     override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("hello")
         addFromUserDef()
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
             let decoder = JSONDecoder()
             if let obj = try? decoder.decode(Array.self, from: objects) as [user]{
                 newUsers = obj
-         //       filteredUsers.append(contentsOf: newUsers)
+            filteredUsers.append(contentsOf: newUsers)
                 userListTable.reloadData()
             }
         }
@@ -105,28 +105,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func AddProfile(_ sender: Any) {
-
+        
     }
     
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          
-          if segue.identifier == "profile" {
-              if let vc = segue.destination as? ProfileVCViewController {
-                  vc.name = filteredUsers[index].name
-                  vc.email = filteredUsers[index].email
-                  vc.website = filteredUsers[index].website
-                  vc.phone = String(filteredUsers[index].phone)
-                  vc.username = filteredUsers[index].username
-                  if filteredUsers[index].company != nil{
-                      vc.comp = filteredUsers[index].company!
-                  }
-                  if filteredUsers[index].address != nil{
-                      vc.address = filteredUsers[index].address!
-                  }
-              }
-              
-          }
-      }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "profile" {
+            if let vc = segue.destination as? ProfileVCViewController {
+                vc.name = filteredUsers[index].name
+                vc.email = filteredUsers[index].email
+                vc.website = filteredUsers[index].website
+                vc.phone = String(filteredUsers[index].phone)
+                vc.username = filteredUsers[index].username
+                if filteredUsers[index].company != nil{
+                    vc.comp = filteredUsers[index].company!
+                }
+                if filteredUsers[index].address != nil{
+                    vc.address = filteredUsers[index].address!
+                }
+            }
+            
+        }
+    }
     var previousNumber: UInt32?
     
     func randomNumber() -> UInt32 {
@@ -147,10 +147,10 @@ class ViewController: UIViewController {
         if _sender.identifier == "backToFirst"
         {
             print("from backtofirst")
-                   addFromUserDef()
-                   filteredUsers = users
-                   filteredUsers.append(contentsOf: newUsers)
-                   userListTable.reloadData()
+            addFromUserDef()
+            filteredUsers = users
+            filteredUsers.append(contentsOf: newUsers)
+            userListTable.reloadData()
         }
     }
 }
@@ -189,14 +189,17 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
+        if editingStyle == .delete {
             userListTable.beginUpdates()
+            if newUsers.contains(filteredUsers[indexPath.row]){
             if let indexToRemove = newUsers.firstIndex(of: filteredUsers[indexPath.row]) {
-              newUsers.remove(at:indexToRemove)
-              defaults.set(newUsers, forKey: "user_object")
-
+                newUsers.remove(at:indexToRemove)
+                let encoder = JSONEncoder()
+                let encoded = try? encoder.encode(newUsers)
+                defaults.set(encoded, forKey: "user_object")
+                
             }
-            
+            }
             
             filteredUsers.remove(at: indexPath.row)
             userListTable.deleteRows(at: [indexPath], with: .fade)

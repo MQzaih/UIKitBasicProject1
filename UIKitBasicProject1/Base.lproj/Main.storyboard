@@ -457,11 +457,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pYg-us-7bw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pYg-us-7bw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pYg-us-7bw" firstAttribute="leading" secondItem="cZd-g7-2kQ" secondAttribute="leading" id="Kyb-Il-eo6"/>
                             <constraint firstItem="pYg-us-7bw" firstAttribute="top" secondItem="cZd-g7-2kQ" secondAttribute="top" id="Rrr-N7-zeW"/>
