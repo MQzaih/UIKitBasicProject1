@@ -172,7 +172,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 cell.company.isHidden = false
                 cell.companyName.isHidden = false
             }
-            cell.company.text = filteredUsers[indexPath.row].company!.name
+            cell.company.text = filteredUsers[indexPath.row].company?.name
             cell.username.text = filteredUsers[indexPath.row].name
             cell.email.text = filteredUsers[indexPath.row].email
             return cell
